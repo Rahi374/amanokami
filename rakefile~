@@ -1,0 +1,13 @@
+task default: [build, publish]
+
+task :build do
+end
+
+task :publish do
+end
+
+task :newpost do
+end
+
+task :newproj do
+end

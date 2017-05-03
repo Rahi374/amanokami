@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <title>News: Hacked! - Amanokami Blog</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Paul Elder" />
+    <meta name="description" content="I got hacked!" />
+    <meta name="keywords" content="security" />
+    <link rel="stylesheet" href="/media/css/main.css" type="text/css">
+    <link rel="stylesheet" href="/media/css/prettify.css" type="text/css">
+  </head>
+  <body class="container">
+    <div>
+      <header class="masthead">
+        <h1 class="masthead-title"><a href="/">Amanokami Blog</a></h1>
+        <p>Emacs of an IB Student</p>
+        <ul>
+          <li><a href="/blog/">Blog</a></li>
+          <li><a href="/tags/">Tags</a></li>
+          <li><a href="/about/">About</a></li>
+          <li><a href="https://github.com/Rahi374">GitHub</a></li>
+          <li><a href="/rss.xml">RSS</a></li>
+        </ul>
+        <form method="get" id="searchform" action="//www.google.com/search">
+          <input type="text" class="field" name="q" id="s" placeholder="Search">
+          <input type="hidden" name="as_sitesearch" value="amanokami.net">
+        </form>
+      </header>
+    </div>
+
+<div>
+<div class="post">
+<h1>News: Hacked!</h1>
+<p>
+Yes, I realize I'm using a relatively immature term to refer to this event: I got hacked. In more sophisticated terms, somebody managed to install bonet on my server (presumably)
+</p>
+
+<div id="outline-container-sec-1" class="outline-2">
+<h2 id="sec-1">The Story and Deductions</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+So yesterday I logged in to my server (at home) and noticed that the "last login" was from a domain I didn't recognize. Turns out that it was me, logging in from school, and another odd domain that I caught was from 3G from my phone.
+</p>
+
+<p>
+Anyway, I do remember from quite a while back Google kept captchaing me, and <a href="http://play.pokemonshowdown.com/">Pokémon Showdown</a> was accusing me of spamming, so I connected the dots and assumed that someone managed to get into my server and install botnet. Also I recently read a story about a guy setting up an ssh honeypot and checking out what people do after they get in <a href="https://sysdig.com/blog/fishing-for-hackers/">https://sysdig.com/blog/fishing-for-hackers/</a>. I wasn't able to locate the botnet program myself (as I could see from that guy's post attackers are pretty good at hiding their stuff), but I was able to deduce its presence from these clues. I'm not too experienced with network monitoring tools.
+</p>
+
+<p>
+I checked the ssh log (/var/log/auth.log) and I was surprised at how many login attempts there were. I knew the honeypot guy set up his server in a pretty popular IP space to ensure that he would "fish a hacker" (I hate myself for using this term in this way, thanks a lot society), but I was a nobody in Japan, why would anybody try to break into my home server? -- yeah to install botnet, of course, duh.
+</p>
+
+<p>
+Then I also remembered that I left a VNC server open for quite some time... great idea, I know. (Remember how the pi user on a Raspberry Pi can sudo without a password?) I closed it off earlier this year, but it was open long enough that I guess resourceful hackers scanning IPs could eventually find it and put botnet on my server. Especially with all those "insecure IoT webcam" scanners out there on the web, I don't know why I didn't expect anybody to get to my VNC server.
+</p>
+
+<p>
+I remember patching up Heartbeat and Shell Shock when they came out, so I doubt the attacker (there we go that's the word) could have gotten in with those methods. Pretty sure it was the VNC that opened the front door.
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-2" class="outline-2">
+<h2 id="sec-2">The Root of the Problem and The Solution</h2>
+<div class="outline-text-2" id="text-2">
+<p>
+To be honest, prior to this I always thought that Linux systems were invincible (to a certain extent), which I suppose they are if the administrator sets them up properly. If you're good, you could put a server in the DMZ, whereas if you're not, let your commercial router be the firewall.
+</p>
+
+<p>
+I guess the problem here was my error of leaving the VNC server open. (I'm just imagining the attacker checking out port 80 to see what's cool and he reads this and is like "lol I got in by brute-forcing your ssh and editing the log lol n00b")
+</p>
+
+<p>
+So for the solution I did pretty simple stuff: randomizing the ssh port and closing off all ports but ssh, HTTP and Minecraft on the router. I decided the router is probably better at firewalling then I am. I don't think posting the solutions would be a problem since if an attacker were to come again he/she should be able to deduce these simple measures easily.
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-3" class="outline-2">
+<h2 id="sec-3">What I Learned</h2>
+<div class="outline-text-2" id="text-3">
+<p>
+Yeah getting hacked is pretty bad. At least I didn't have any user data on it (even if I did I would encrypt it like sane people would, although I can't afford an SSL certificate from GoDaddy for HTTPS). I got turned into botnet so I suppose it's not as bad as losing cash or sensitive information, but I thought it was a good wake-up call to the perils of the Internet.
+</p>
+
+<p>
+Prior to this, like I mentioned earlier, I disregarded security quite a bit due to being in the safe haven of Linux, whose image was just shattered by this event. I better start learning network monitoring tools and security stuff. I suppose I could start with ipstat, iptables, and sysdig.
+</p>
+</div>
+</div>
+
+</div>
+</div>
+    <div>
+      <div class="post-meta">
+        <span title="post date" class="post-info">2016-03-30</span>
+        <span title="last modification date" class="post-info">2016-03-31</span>
+        <span title="tags" class="post-info"><a href="/tags/security/">security</a></span>
+        <span title="author" class="post-info">Paul Elder</span>
+      </div>
+      <section>
+        <h1>Comments</h1>
+        <div id="disqus_thread"></div>
+        <script type="text/javascript">
+          //var disqus_developer = 1;
+          var disqus_identifier = "/blog/2016/03/30/hacked";
+          var disqus_url = "http://amanokami.net/blog/2016/03/30/hacked";
+          var disqus_shortname = 'amanokami';
+          /* * * DON'T EDIT BELOW THIS LINE * * */
+          (function() {
+          var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+          dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+          (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+          })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+        <a href="//disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+      </section>
+      <script src="//code.jquery.com/jquery-latest.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.js"></script>
+      <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      <script src="/media/js/main.js"></script>
+      <div class="footer">
+        <p>Generated by <a href="http://www.gnu.org/software/emacs/">Emacs</a> 24.x (<a href="http://orgmode.org">Org mode</a> 8.x)</p>
+        <p>
+          Copyright &copy; 2012 - <span id="footerYear"></span> <a href="mailto:paul &lt;dot&gt; elder &lt;at&gt; amanokami &lt;dot&gt; net">Paul Elder</a>
+          &nbsp;&nbsp;-&nbsp;&nbsp;
+          Powered by <a href="https://github.com/kelvinh/org-page" target="_blank">org-page</a>
+          <script type="text/javascript">document.getElementById("footerYear").innerHTML = (new Date()).getFullYear();</script>
+        </p>
+      </div>
+    </div>
+
+  </body>
+</html>

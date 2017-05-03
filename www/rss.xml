@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0"
+     xmlns:atom="http://www.w3.org/2005/Atom"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     >
+  
+  <channel>
+    <title>Amanokami Blog</title>
+    <link>https://amanokami.net</link>
+    <atom:link href="https://amanokami.net/rss.xml" rel="self" type="application/rss+xml" />
+    <description>Emacs of a Student</description>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 03 May 2017 15:00:59 +0900</lastBuildDate>
+    <docs>http://www.rssboard.org/rss-specification</docs>
+    <generator>Custom static site generator (https://github.com/Rahi374/amanokami)</generator>
+    <copyright></copyright>
+
+    
+    <item>
+      <title>New plan</title>
+      <link>https://amanokami.net/blog/2016/07/06/client-side-webapp-ui-test/index.html</link>
+      <description></description>
+      <pubDate>2016-07-06</pubDate>
+      <guid>https://amanokami.net/blog/2016/07/06/client-side-webapp-ui-test/index.html</guid>
+      <dc:creator>Paul Elder</dc:creator>
+    </item>
+    
+    <item>
+      <title>Post-Another Hiatus - Node and Keyboards</title>
+      <link>https://amanokami.net/blog/2016/06/20/post-another-hiatus/index.html</link>
+      <description></description>
+      <pubDate>2016-06-20</pubDate>
+      <guid>https://amanokami.net/blog/2016/06/20/post-another-hiatus/index.html</guid>
+      <dc:creator>Paul Elder</dc:creator>
+    </item>
+    
+    <item>
+      <title>Post Hiatus, Post Exams - Part 1: Sonic Pi</title>
+      <link>https://amanokami.net/blog/2016/05/15/post-hiatus-post-exams-p1-sonic-pi/index.html</link>
+      <description></description>
+      <pubDate>2016-05-15</pubDate>
+      <guid>https://amanokami.net/blog/2016/05/15/post-hiatus-post-exams-p1-sonic-pi/index.html</guid>
+      <dc:creator>Paul Elder</dc:creator>
+    </item>
+    
+    <item>
+      <title>Minecraft Server with Emacs</title>
+      <link>https://amanokami.net/blog/2016/04/14/minecraft-server-with-emacs/index.html</link>
+      <description></description>
+      <pubDate>2016-04-14</pubDate>
+      <guid>https://amanokami.net/blog/2016/04/14/minecraft-server-with-emacs/index.html</guid>
+      <dc:creator>Paul Elder</dc:creator>
+    </item>
+    
+    <item>
+      <title>AP Calc BC in a week - End</title>
+      <link>https://amanokami.net/blog/2016/04/01/ap-calc-bc-in-a-week-end/index.html</link>
+      <description></description>
+      <pubDate>2016-04-01</pubDate>
+      <guid>https://amanokami.net/blog/2016/04/01/ap-calc-bc-in-a-week-end/index.html</guid>
+      <dc:creator>Paul Elder</dc:creator>
+    </item>
+    
+    <item>
+      <title>News: Hacked!</title>
+      <link>https://amanokami.net/blog/2016/03/30/hacked/index.html</link>
+      <description></description>
+      <pubDate>2016-03-30</pubDate>
+      <guid>https://amanokami.net/blog/2016/03/30/hacked/index.html</guid>
+      <dc:creator>Paul Elder</dc:creator>
+    </item>
+    
+    <item>
+      <title>AP Calc BC in a week - Part 6</title>
+      <link>https://amanokami.net/blog/2016/03/30/ap-calc-bc-in-a-week-part-6/index.html</link>
+      <description></description>
+      <pubDate>2016-03-30</pubDate>
+      <guid>https://amanokami.net/blog/2016/03/30/ap-calc-bc-in-a-week-part-6/index.html</guid>
+      <dc:creator>Paul Elder</dc:creator>
+    </item>
+    
+    <item>
+      <title>AP Calc BC in a week - Part 6</title>
+      <link>https://amanokami.net/blog/2016/03/29/ap-calc-bc-in-a-week-part-6/index.html</link>
+      <description></description>
+      <pubDate>2016-03-29</pubDate>
+      <guid>https://amanokami.net/blog/2016/03/29/ap-calc-bc-in-a-week-part-6/index.html</guid>
+      <dc:creator>Paul Elder</dc:creator>
+    </item>
+    
+    <item>
+      <title>AP Calc BC in a week - Part 5</title>
+      <link>https://amanokami.net/blog/2016/03/29/ap-calc-bc-in-a-week-part-5/index.html</link>
+      <description></description>
+      <pubDate>2016-03-29</pubDate>
+      <guid>https://amanokami.net/blog/2016/03/29/ap-calc-bc-in-a-week-part-5/index.html</guid>
+      <dc:creator>Paul Elder</dc:creator>
+    </item>
+    
+    <item>
+      <title>AP Calc BC in a week - Part 4</title>
+      <link>https://amanokami.net/blog/2016/03/25/ap-calc-bc-in-a-week-part-4/index.html</link>
+      <description></description>
+      <pubDate>2016-03-25</pubDate>
+      <guid>https://amanokami.net/blog/2016/03/25/ap-calc-bc-in-a-week-part-4/index.html</guid>
+      <dc:creator>Paul Elder</dc:creator>
+    </item>
+    
+    <item>
+      <title>AP Calc BC in a week - Part 3</title>
+      <link>https://amanokami.net/blog/2016/03/23/ap-calc-bc-in-a-week-part-3/index.html</link>
+      <description></description>
+      <pubDate>2016-03-23</pubDate>
+      <guid>https://amanokami.net/blog/2016/03/23/ap-calc-bc-in-a-week-part-3/index.html</guid>
+      <dc:creator>Paul Elder</dc:creator>
+    </item>
+    
+    <item>
+      <title>AP Calc BC in a week - Part 2</title>
+      <link>https://amanokami.net/blog/2016/03/21/ap-calc-bc-in-a-week-part-2/index.html</link>
+      <description></description>
+      <pubDate>2016-03-21</pubDate>
+      <guid>https://amanokami.net/blog/2016/03/21/ap-calc-bc-in-a-week-part-2/index.html</guid>
+      <dc:creator>Paul Elder</dc:creator>
+    </item>
+    
+    <item>
+      <title>AP Calc BC in a week - Intro</title>
+      <link>https://amanokami.net/blog/2016/03/20/ap-calc-bc-in-a-week-intro/index.html</link>
+      <description></description>
+      <pubDate>2016-03-20</pubDate>
+      <guid>https://amanokami.net/blog/2016/03/20/ap-calc-bc-in-a-week-intro/index.html</guid>
+      <dc:creator>Paul Elder</dc:creator>
+    </item>
+    
+    <item>
+      <title>AP Calc BC in a week - Part 1</title>
+      <link>https://amanokami.net/blog/2016/03/20/ap-calc-bc-1/index.html</link>
+      <description></description>
+      <pubDate>2016-03-20</pubDate>
+      <guid>https://amanokami.net/blog/2016/03/20/ap-calc-bc-1/index.html</guid>
+      <dc:creator>Paul Elder</dc:creator>
+    </item>
+    
+    <item>
+      <title>IBEmacs: Scheduling</title>
+      <link>https://amanokami.net/blog/2016/03/13/ibemacs-scheduling/index.html</link>
+      <description></description>
+      <pubDate>2016-03-13</pubDate>
+      <guid>https://amanokami.net/blog/2016/03/13/ibemacs-scheduling/index.html</guid>
+      <dc:creator>Paul Elder</dc:creator>
+    </item>
+    
+    <item>
+      <title>Tutorial: Setting up OpenVPN</title>
+      <link>https://amanokami.net/blog/2016/03/10/tutorial-setting-up-openvpn/index.html</link>
+      <description></description>
+      <pubDate>2016-03-10</pubDate>
+      <guid>https://amanokami.net/blog/2016/03/10/tutorial-setting-up-openvpn/index.html</guid>
+      <dc:creator>Paul Elder</dc:creator>
+    </item>
+    
+    <item>
+      <title>Home directory organization</title>
+      <link>https://amanokami.net/blog/2016/03/09/home-directory-organization/index.html</link>
+      <description></description>
+      <pubDate>2016-03-09</pubDate>
+      <guid>https://amanokami.net/blog/2016/03/09/home-directory-organization/index.html</guid>
+      <dc:creator>Paul Elder</dc:creator>
+    </item>
+    
+    <item>
+      <title>Web: Learning Flexbox with games</title>
+      <link>https://amanokami.net/blog/2016/03/08/flexbox-defense/index.html</link>
+      <description></description>
+      <pubDate>2016-03-08</pubDate>
+      <guid>https://amanokami.net/blog/2016/03/08/flexbox-defense/index.html</guid>
+      <dc:creator>Paul Elder</dc:creator>
+    </item>
+    
+    <item>
+      <title>Introduction - Emacs of an IB Student</title>
+      <link>https://amanokami.net/blog/2016/03/01/introduction/index.html</link>
+      <description></description>
+      <pubDate>2016-03-01</pubDate>
+      <guid>https://amanokami.net/blog/2016/03/01/introduction/index.html</guid>
+      <dc:creator>Paul Elder</dc:creator>
+    </item>
+    
+    
+  </channel>
+</rss>

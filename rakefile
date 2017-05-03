@@ -1,0 +1,313 @@
+# coding: utf-8
+require "pathname"
+require "erb"
+require "nokogiri"
+require "ostruct"
+
+default_lang = "en-us"
+default_author = "Paul Elder"
+
+rss_title = "Amanokami Blog"
+rss_link  = "https://amanokami.net"
+rss_alink = "https://amanokami.net/rss.xml"
+rss_desc  = "Emacs of a Student"
+rss_docs  = "http://www.rssboard.org/rss-specification"
+rss_gen   = "Custom static site generator (https://github.com/Rahi374/amanokami)"
+
+task default: [:build_posts,
+               :build_projects,
+               :build_indexes,
+               :build_rss,
+               #:build_tags,
+               :copy_media,
+               #:publish
+              ]
+
+task :build_posts do
+  files = Rake::FileList["src/blog/*.html"].reject{|i| i.match(/src\/blog\/index.html/) }
+  puts "Getting src blog posts html files..."
+  puts files
+
+  puts "Loading template..."
+  template = ""
+  File.open("template.html.erb", "r") do |f| f.each_line do |line| template << line end end
+  renderer = ERB.new(template)
+
+  files.each do |file|
+    puts "=== Working on #{file} ==="
+    puts "    => Parsing header..."
+    a = []
+    h = {}
+    File.open(file, "r") do |f|
+      s = "" ; while s != "---" do s = f.first.chomp ; a << s end
+    end
+    a.pop
+    a.map{|i| i.split(": ")}.map{|j| h[j[0]] = j[1..-1].join(": ")}
+    
+
+    puts "    => Getting file content..."
+    c = ""
+    File.open(file, "r") do |f|
+      f.each_line do |line|
+        c << line
+      end
+    end
+    content = c.slice((c.index("---\n")+4)..-1).strip.gsub("\n", "\n    ")
+    content = "\n    " + content
+
+    puts "  => Setting ERB values..."
+    @lang = (h["lang"] or default_lang)
+    @author = (h["author"] or default_author)
+    @title = h["title"]
+    @content = content
+    cr = h["created"]
+    up = (h["updated"] or cr)
+    @post_date = cr[0..3] + "-" + cr[4..5] + "-" + cr[6..7]
+    @mod_date = up[0..3] + "-" + up[4..5] + "-" + up[6..7]
+    @tags = h["tags"]
+    if @tags then h["tags"] = h["tags"].split(", ") end
+    t = file.gsub("src/blog/", "").split("_")
+    @name = t.first[0..3] + "/" + t.first[4..5] + "/" + t.first[6..7] + "/" + t.last.split(".html").first
+
+    puts "  => Casting ERB magic on #{file}..."
+    output = renderer.result
+
+    puts "  => Writing ERB output to www/blog/#{@name}/index.html"
+    string = (@name.split("/").join("/")).split("/") ; a = []
+    string.each_index do |i| a << string[0..i].join("/") end
+    a.map{|i| unless Dir.exist? "www/blog/#{i}" then Dir.mkdir "www/blog/#{i}" end }
+    
+    f = File.new("www/blog/#{@name}/index.html", "w")
+    f.write output
+    f.close
+    
+    puts "  => Finished with #{file}"
+  end
+
+  puts "=> Finished building posts!"
+end
+
+
+task :build_projects do
+  puts "=== Building projects ==="
+  files = Rake::FileList["src/projects/*.html"].reject{|i| i.match(/src\/projects\/index.html/) }
+  puts "Getting src projects html files..."
+  puts files
+
+  puts "Loading template..."
+  template = ""
+  File.open("template.html.erb", "r") do |f| f.each_line do |line| template << line end end
+  renderer = ERB.new(template)
+
+  files.each do |file|
+    puts "=== Working on #{file} ==="
+    puts "    => Parsing header..."
+    a = []
+    h = {}
+    File.open(file, "r") do |f|
+      s = "" ; while s != "---" do s = f.first.chomp ; a << s end
+    end
+    a.pop
+    a.map{|i| i.split(": ")}.map{|j| h[j[0]] = j[1..-1].join(": ")}
+    
+
+    puts "    => Getting file content..."
+    c = ""
+    File.open(file, "r") do |f|
+      f.each_line do |line|
+        c << line
+      end
+    end
+    content = c.slice((c.index("---\n")+4)..-1).strip.gsub("\n", "\n    ")
+    content = "\n    " + content
+
+    puts "  => Setting ERB values..."
+    @lang = (h["lang"] or default_lang)
+    @author = (h["author"] or default_author)
+    @title = h["title"]
+    @content = content
+    @post_date = h["created"]
+    @mod_date = (h["updated"] or h["created"])
+    @tags = h["tags"]
+    if @tags then h["tags"] = h["tags"].split(", ") end
+    @name = file.gsub("src/projects/", "").split(".html").first
+
+    puts "  => Casting ERB magic on #{file}..."
+    output = renderer.result
+
+    puts "  => Writing ERB output to www/projects/#{@name}/index.html"
+    a.map{|i| unless Dir.exist? "www/projects/#{name}" then Dir.mkdir "www/projects/#{name}" end }
+    
+    f = File.new("www/projects/#{@name}/index.html", "w")
+    f.write output
+    f.close
+    
+    puts "  => Finished with #{file}"
+  end
+
+  puts "=> Finished building projects!"  
+end
+
+
+task :build_indexes do
+  filelist_names  = ["about", "main index", "blog index", "projects index"]
+  filelist_titles = ["About", "", "Blog Index", "Projects Index"]
+  filelist_src    = ["src/about/index.html", "src/index.html", "src/blog/index.html", "src/projects/index.html"]
+  filelist_dest   = ["www/about/index.html", "www/index.html", "www/blog/index.html", "www/projects/index.html"]
+  filelist_dir    = ["", "", "blog", "projects"]
+
+  filelist_names.each_index do |i|
+    puts "=== Building #{filelist_names[i]} ==="
+    file = filelist_src[i]
+
+    puts "Loading template..."
+    template = ""
+    File.open("template.html.erb", "r") do |f| f.each_line do |line| template << line end end
+    n = template.index("<div class=\"post-meta\">")
+    m = template.index("</section>")
+    template = template[0..(n-3)] + template[(m+11)..-1]  
+    renderer = ERB.new(template)
+
+    puts "    => Getting file content..."
+    c = ""
+    File.open(file, "r") do |f| f.each_line do |line| c << line end end
+    c = "\n    " + c.gsub("\n", "\n    ")
+
+    if i == 2 or i == 3 then
+      files  = Rake::FileList["www/#{filelist_dir[i]}/*/*/*/*/*.html"].map{|j| j[3..-1]}.reverse
+      dates  = files.map{|j| j[6..15].gsub("/", "-")}
+      titles = []
+
+      files.map{|j| "www" + j}.each do |file|
+        puts file
+        File.open(file, "r") do |f|
+          s = ""
+          while s != "---" do
+            s = f.first.chomp
+            if s.match("title") then titles << s; s = "---" end
+          end
+        end
+      end
+
+      titles = titles.map{|j| j.strip[7..-25]}
+
+      c += "\n    <ul class=\"posts\">"
+      files.each_index do |j|
+        c += "\n      <li>#{dates[j]} » <a href=\"#{files[j]}\">#{titles[j]}</a></li>"
+      end
+      c += "\n    </ul>
+"
+    end
+
+    puts "  => Setting ERB values..."
+    @lang = default_lang
+    @author = default_author
+    @title = filelist_titles[i]
+    @content = c
+
+    puts "  => Casting ERB magic on #{file}..."
+    output = renderer.result
+
+    puts "  => Writing ERB output to #{filelist_dest[i]}"
+    if i == 0 then
+      unless Dir.exist? "www/about" then Dir.mkdir "www/about" end
+    end
+    if i == 3 then
+      unless Dir.exist? "www/projects" then Dir.mkdir "www/projects" end
+    end
+    f = File.new(filelist_dest[i], "w")
+    f.write output
+    f.close
+    
+    puts "=> Finished building #{filelist_names[i]}!"
+  end
+end
+
+
+task :build_rss do
+  puts "=== Building RSS ==="
+  file = "src/rss.xml.erb"
+  dest = "www/rss.xml"
+
+  puts "Loading template..."
+  f = File.open(file, "r")
+  rss = f.read
+  f.close
+  renderer = ERB.new(rss)
+  
+  puts "  => Setting ERB values..."
+  @title = rss_title
+  @link = rss_link
+  @atom_link = rss_alink
+  @desc = rss_desc
+  @lang = default_lang
+  @last_build_date = Time.now.strftime "%a, %d %b %Y %H:%M:%S %z"
+  @docs = rss_docs
+  @generator = rss_gen
+  @author = default_author
+  @items = []
+
+  puts "    => Reading data from blog index..."
+  f = File.open("www/blog/index.html", "r")
+  g = f.read
+  f.close
+  
+  delim = "<ul class=\"posts\">"
+  eelim = "</ul>"  
+  n = g.index(delim) + delim.length + 1
+  m = g.index(eelim, n) - 1
+  con = g[n..m]
+
+  doc = Nokogiri::HTML con
+  doc.xpath("//li").each_with_index do |i, j|
+    @items[j] = OpenStruct.new
+    @items[j].title = i.text.strip.split(" » ").last
+    @items[j].link = rss_link + i.children.last.values.first
+    @items[j].desc = ""
+    @items[j].pub_date = i.text.strip.split(" » ").first
+    @items[j].guid = @items[j].link
+    @items[j].author = default_author
+  end
+
+  puts "  => Casting ERB magic on #{file}..."
+  output = renderer.result
+
+  puts "  => Writing ERB output to #{dest}"
+  f = File.open(dest, "w")
+  f.write output
+  f.close
+
+  puts "=> Finished building RSS!"
+end
+
+
+task :build_tags do
+end
+
+
+task :copy_media do
+  puts "=== Copying media ==="
+  system("rm -r www/media")
+  unless Dir.exist? "www/media" then Dir.mkdir "www/media" end
+  system("cp -rv src/media/* www/media/")
+  puts "=> Done"
+end
+
+
+def get_file_content file
+  
+end
+
+def mkdir path
+  a = []
+  path.split("/").each_index do |i| a << path.split("/")[0..i].join("/") end
+  a.map{|i|
+    Dir.mkdir i
+    puts "      => mkdir: #{i}"
+  }
+  return nil
+end
+
+
+task :publish do
+end

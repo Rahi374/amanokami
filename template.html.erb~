@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="<%= @lang %>">
+  
+  <meta charset="UTF-8">
+  <meta name="author" content="<%= @author %>" />
+
+  <link rel="stylesheet" href="/media/css/index.css">
+  
+  <title><%= @title %> - Amanokami Kai</title>
+
+
+  <header>
+    <h1>Amanokami Kai</h1>
+    
+    <nav>
+      <ul>
+	<li> <a href="/">Top</a>
+	<li> <a href="/blog">Blog</a>
+	<li> <a href="/about">About</a>
+	<li> <a href="/projects">Projects</a>
+	<li> <a href="https://github.com/Rahi374">GitHub</a>
+      </ul>
+    </nav>
+
+    <form method="get" id="searchform" action="//www.google.com/search">
+      <input type="text" class="field" name="q" id="s" placeholder="Search">
+      <input type="hidden" name="as_sitesearch" value="amanokami.net">
+      <input type="submit" class="searchsubmit" value="🔎">
+      <a href="/rss.xml" class="rss">RSS</a>
+    </form>
+  </header>
+
+  <div id="content">
+    <%= @content %>
+  </div>
+
+  <hr>
+  <div class="post-meta">
+    <span title="post date" class="post-info"><%= @post_date %></span>
+    <span title="last modification date" class="post-info"><%= @mod_date %></span>
+    <span title="tags" class="post-info">
+      <% unless @tags.nil? then for tag in @tags do %>
+      <a href=<%= "/tag/" + tag + "/" %>> <%= tag %> </a>
+      <% end end %>
+    </span>
+    <span title="author" class="post-info"><%= @author %></span>
+  </div>
+
+  <hr>
+  <section>
+    <h3>Comments</h3>
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+      //var disqus_developer = 1;
+      var disqus_identifier = "<%= '/blog/' + @name %>";
+      var disqus_url = "<%= 'http://amanokami.net/blog/' + @name %>";
+      var disqus_shortname = 'amanokami';
+      /* * * DON'T EDIT BELOW THIS LINE * * */
+      (function() {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="//disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+  </section>
+  <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+
+  <div class="footer">
+    <p>
+      Copyright &copy; 2012 - <span id="footerYear"></span> <a href="mailto:paul &lt;dot&gt; elder &lt;at&gt; amanokami &lt;dot&gt; net">Paul Elder</a>
+      <script type="text/javascript">document.getElementById("footerYear").innerHTML = (new Date()).getFullYear();</script>
+    </p>
+  </div>
+</div>
+</html>

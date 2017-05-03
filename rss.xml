@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0">
+  <channel>
+    <title>Amanokami Blog</title>
+    <link>http://amanokami.net/</link>
+    <description>Emacs of an IB Student</description>
+    <pubDate>Wed, 06 Jul 2016 16:36:24 JST</pubDate>
+    <lastBuildDate>Wed, 06 Jul 2016 16:36:24 JST</lastBuildDate>
+    <docs>http://www.rssboard.org/rss-specification</docs>
+    <generator>Org-page static site generator (https://github.com/kelvinh/org-page)</generator>
+    <item>
+      <title>New plan</title>
+      <link>http://amanokami.net/blog/2016/07/06/client-side-webapp-ui-test</link>
+      <description><![CDATA[org-page is getting annoying]]></description>
+      <pubDate>2016-07-06</pubDate>
+      <guid>http://amanokami.net/blog/2016/07/06/client-side-webapp-ui-test</guid>
+    </item>
+    <item>
+      <title>Post-Another Hiatus - Node and Keyboards</title>
+      <link>http://amanokami.net/blog/2016/06/20/post-another-hiatus</link>
+      <description><![CDATA[Post hiatus.]]></description>
+      <pubDate>2016-06-21</pubDate>
+      <guid>http://amanokami.net/blog/2016/06/20/post-another-hiatus</guid>
+    </item>
+    <item>
+      <title>Post Hiatus, Post Exams - Part 1: Sonic Pi</title>
+      <link>http://amanokami.net/blog/2016/05/15/post-hiatus-post-exams-p1-sonic-pi</link>
+      <description><![CDATA[A little update, post-hiatus, post-exams. Sonic Pi.]]></description>
+      <pubDate>2016-05-30</pubDate>
+      <guid>http://amanokami.net/blog/2016/05/15/post-hiatus-post-exams-p1-sonic-pi</guid>
+    </item>
+    <item>
+      <title>AP Calc BC in a week - Part 1</title>
+      <link>http://amanokami.net/blog/2016/03/20/ap-calc-bc-1</link>
+      <description><![CDATA[Learning AP Calculus BC in a week - Part 1]]></description>
+      <pubDate>2016-05-16</pubDate>
+      <guid>http://amanokami.net/blog/2016/03/20/ap-calc-bc-1</guid>
+    </item>
+    <item>
+      <title>AP Calc BC in a week - Part 2</title>
+      <link>http://amanokami.net/blog/2016/03/21/ap-calc-in-a-week-part-2</link>
+      <description><![CDATA[Learning AP Calculus BC in a week - Part 2]]></description>
+      <pubDate>2016-05-16</pubDate>
+      <guid>http://amanokami.net/blog/2016/03/21/ap-calc-in-a-week-part-2</guid>
+    </item>
+    <item>
+      <title>AP Calc BC in a week - Part 3</title>
+      <link>http://amanokami.net/blog/2016/03/23/ap-calc-bc-in-a-week-part-3</link>
+      <description><![CDATA[Learning AP Calculus BC in a week - Part 3]]></description>
+      <pubDate>2016-05-16</pubDate>
+      <guid>http://amanokami.net/blog/2016/03/23/ap-calc-bc-in-a-week-part-3</guid>
+    </item>
+    <item>
+      <title>AP Calc BC in a week - Part 4</title>
+      <link>http://amanokami.net/blog/2016/03/25/ap-calc-bc-in-a-week-part-4</link>
+      <description><![CDATA[Learning AP Calculus BC in a week - Part 4]]></description>
+      <pubDate>2016-05-16</pubDate>
+      <guid>http://amanokami.net/blog/2016/03/25/ap-calc-bc-in-a-week-part-4</guid>
+    </item>
+    <item>
+      <title>AP Calc BC in a week - Part 5</title>
+      <link>http://amanokami.net/blog/2016/03/29/ap-calc-bc-in-a-week-part-5</link>
+      <description><![CDATA[Learning AP Calculus BC in a week - Part 5]]></description>
+      <pubDate>2016-05-16</pubDate>
+      <guid>http://amanokami.net/blog/2016/03/29/ap-calc-bc-in-a-week-part-5</guid>
+    </item>
+    <item>
+      <title>AP Calc BC in a week - Part 6</title>
+      <link>http://amanokami.net/blog/2016/03/30/ap-calc-bc-in-a-week-part-6</link>
+      <description><![CDATA[Learning AP Calculus BC in a week - Part 6]]></description>
+      <pubDate>2016-05-16</pubDate>
+      <guid>http://amanokami.net/blog/2016/03/30/ap-calc-bc-in-a-week-part-6</guid>
+    </item>
+    <item>
+      <title>AP Calc BC in a week - End</title>
+      <link>http://amanokami.net/blog/2016/04/01/ap-calc-bc-in-a-week-end</link>
+      <description><![CDATA[Learning AP Calculus BC in a week - End]]></description>
+      <pubDate>2016-05-16</pubDate>
+      <guid>http://amanokami.net/blog/2016/04/01/ap-calc-bc-in-a-week-end</guid>
+    </item>
+  </channel>
+</rss>

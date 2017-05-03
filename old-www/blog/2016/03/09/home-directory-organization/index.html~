@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <title>Home directory organization - Amanokami Blog</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Paul Elder" />
+    <meta name="description" content="My way of organizing my home directory." />
+    <meta name="keywords" content="ib, emacs, organization" />
+    <link rel="stylesheet" href="/media/css/main.css" type="text/css">
+    <link rel="stylesheet" href="/media/css/prettify.css" type="text/css">
+  </head>
+  <body class="container">
+    <div>
+      <header class="masthead">
+        <h1 class="masthead-title"><a href="/">Amanokami Blog</a></h1>
+        <p>Emacs of an IB Student</p>
+        <ul>
+          <li><a href="/blog/">Blog</a></li>
+          <li><a href="/tags/">Tags</a></li>
+          <li><a href="/about/">About</a></li>
+          <li><a href="https://github.com/Rahi374">GitHub</a></li>
+          <li><a href="/rss.xml">RSS</a></li>
+        </ul>
+        <form method="get" id="searchform" action="//www.google.com/search">
+          <input type="text" class="field" name="q" id="s" placeholder="Search">
+          <input type="hidden" name="as_sitesearch" value="amanokami.net">
+        </form>
+      </header>
+    </div>
+
+<div>
+<div class="post">
+<h1>Home directory organization</h1>
+
+<div id="outline-container-sec-1" class="outline-2">
+<h2 id="sec-1">Directory organization</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+You used to be a kid. You grew up with an 8GB USB memory stick and you threw all your school files in there and life was good. I suppose these days kids use Google Drive.
+</p>
+
+<p>
+Then you grew up and heard you were going to start IB and decided that you should probably reorganize your home folder/directory. Then you run into another problem: how should we organize it?
+</p>
+
+<p>
+If you search the internet, you could find a lot of ways to organize your home directory, but the problem is that they are all home dirs of working people, and so they are not designed for The (IB) Student.
+</p>
+
+<p>
+Here's my ~ (only including the important first-level subdirectories):
+</p>
+<div class="org-src-container">
+
+<pre class="src src-ascii">~/.emacs.d/
+~/bin/
+~/build/
+~/dev/
+~/Documents/
+~/Downloads/
+~/Music/
+~/Pictures/
+~/school/
+~/tmp/
+</pre>
+</div>
+
+<p>
+My ~ contains a mixture of the Gnome-generated directories (Documents, Downloads, Music, Pictures), and FHS-style directories (bin, dev, tmp), and two extra ones (build, school).
+</p>
+
+<p>
+It should be relatively self-explanatory what each directory is for.
+</p>
+<ul class="org-ul">
+<li><b>~/.emacs.d</b> is my most important dotfile. In fact, I moved .emacs into here as init.el so that it's easier to back up. I don't elaborate on this directory in this post
+</li>
+<li><b>~/bin</b> is for my own binaries and scripts (and is included in my $PATH)
+</li>
+<li><b>~/build</b> is for... well, building. Download the source code and compile here and leave the source here.
+</li>
+<li><b>~/dev</b> is my second-biggest tree and it hosts all of my programming stuff. More on this guy later.
+</li>
+<li><b>~/Documents</b> is for (miscellaneous) documents.
+</li>
+<li><b>~/Downloads</b> is for Downloads.
+</li>
+<li><b>~/Music</b> is for Music.
+</li>
+<li><b>~/Pictures</b> is for Pictures (and screenshots).
+</li>
+<li><b>~/school</b> is my biggest tree and hosts all of my school things. More on this later (in fact this is the most important directory of this post)
+</li>
+<li><b>~/tmp</b> is for temporary files. Some people may prefer to put downloads or even builds here, but I throw in old and temporary stuff here. This guy usually doesn't get backed up.
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-sec-2" class="outline-2">
+<h2 id="sec-2">The Schoolwork Directory</h2>
+<div class="outline-text-2" id="text-2">
+<p>
+As an IB student, this is going to be your most important directory (<del>that should be backed up as often as possible</del> Probably would've been a good idea to back it up once in a while.) There are two ways to organize it, since there are two main sets of directories that you need: the subjects, and the data for each subject. One way is to have all the data (eg. books, classwork, handouts, img, notes, projects) all be right under school/, with a full set of subjects being under those, or the opposite, which is what I did (I'm omitting quite a bit of content):
+</p>
+<div class="org-src-container">
+
+<pre class="src src-ascii">~/school/cas/
+~/school/chemistry/
+~/school/college/
+~/school/econ/
+~/school/ee/
+~/school/english/
+~/school/group4/
+~/school/guid/
+~/school/hr/
+~/school/math/
+~/school/misc/
+~/school/physics/
+~/school/spanish/
+~/school/tok/
+~/school/trinity/
+~/school/schedule.org
+~/school/week1.org
+~/school/week2.org
+~/school/template.tex
+</pre>
+</div>
+<p>
+(Now you know which classes I take)
+</p>
+
+<p>
+<code>schedule.org</code> is my org file (like, The Org File) that contains all my tasks and deadlines and schedules and everything. I'll be covering scheduling in another post. <code>week1.org</code> and <code>week2.org</code> are org files that hold my biweekly class schedule. Before I used cfw and org calendars in Emacs, I used to have a function that would paste the weekly schedule into my <code>schedule.org</code> where I could then put in my assignments manually. <code>template.tex</code> is my LaTeX template that works for all subjects (with some deletion necessary before you begin writing). I think I'll cover that in another post too.
+</p>
+
+<p>
+And so under each subject, I have subdirectories to hold subject-individual data (using English as an example):
+</p>
+<div class="org-src-container">
+
+<pre class="src src-ascii">~/school/english/books/
+~/school/english/handouts/
+~/school/english/img/
+~/school/english/projects/
+~/school/english/notes.org
+</pre>
+</div>
+<p>
+Where under <code>books/</code> I would have pdfs of books, <code>handouts/</code> would have pdfs or pictures of handouts, <code>img/</code> would have pictures, and <code>projects/</code> would have all the homework and assignments. Each homework/assignment has it's own directory, so that you can either version control it or you don't don't have to mess with organization if you LaTeX everything. <code>notes.org</code> has all your notes, which I'll cover in another post how to take notes with org.
+</p>
+
+<p>
+This is the directory structure that I found to have helped me the most throughout my IB life. Hopefully it helps you too!
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-3" class="outline-2">
+<h2 id="sec-3">The Dev Directory</h2>
+<div class="outline-text-2" id="text-3">
+<p>
+No, dev does not stand for devices.
+</p>
+
+<p>
+I've heard of some people organizing their dev directory by having a <code>dev/projects</code> and <code>dev/src</code> and <code>dev/scratch</code> or whatever, but rather than organizing them by status, I prefer to organize them by language. Thus, by dev directory is just simply:
+</p>
+<div class="org-src-container">
+
+<pre class="src src-ascii">~/dev/blog/
+~/dev/c/
+~/dev/cad/
+~/dev/js/
+~/dev/music/
+~/dev/node/
+~/dev/overtone/
+~/dev/pgn/
+~/dev/pnd/
+~/dev/rails/
+~/dev/renpy/
+~/dev/ruby/
+~/dev/sh/
+~/dev/sicp/
+~/dev/sync/
+~/dev/www/
+</pre>
+</div>
+<p>
+I don't think I have to explain each directory. Within each directory I just create a subdirectory for each new project, or under a <code>misc/</code> subdirectory if I'm just playing or testing.
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-4" class="outline-2">
+<h2 id="sec-4">Just a few words</h2>
+<div class="outline-text-2" id="text-4">
+<ul class="org-ul">
+<li>How to organize your home folder
+</li>
+<li>How to organize your home directory
+</li>
+<li>How to organize My Documents
+</li>
+<li>How to organize your work files
+</li>
+<li>How to organize your files
+</li>
+<li>How to organize your filesystem
+
+<p>
+Hopefully these will be enough for Google to catch this page for people with similar problems but different wording.
+</p>
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-sec-5" class="outline-2">
+<h2 id="sec-5">Extra</h2>
+<div class="outline-text-2" id="text-5">
+<p>
+Disqus isn't working and I haven't figured out how to insert pictures into org-page. Ugh. Also I don't know how to change that copyright year at the bottom. I think I'll link this to a Twitter account soon too.
+</p>
+</div>
+</div>
+
+</div>
+</div>
+    <div>
+      <div class="post-meta">
+        <span title="post date" class="post-info">2016-03-08</span>
+        <span title="last modification date" class="post-info">2016-03-09</span>
+        <span title="tags" class="post-info"><a href="/tags/ib/">ib</a>, <a href="/tags/emacs/">emacs</a>, <a href="/tags/organization/">organization</a></span>
+        <span title="author" class="post-info">Paul Elder</span>
+      </div>
+      <section>
+        <h1>Comments</h1>
+        <div id="disqus_thread"></div>
+        <script type="text/javascript">
+          //var disqus_developer = 1;
+          var disqus_identifier = "/blog/2016/03/08/home-directory-organization";
+          var disqus_url = "http://amanokami.net/blog/2016/03/08/home-directory-organization";
+          var disqus_shortname = 'paul374';
+          /* * * DON'T EDIT BELOW THIS LINE * * */
+          (function() {
+          var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+          dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+          (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+          })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+        <a href="//disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+      </section>
+      <script src="//code.jquery.com/jquery-latest.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.js"></script>
+      <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      <script src="/media/js/main.js"></script>
+      <div class="footer">
+        <p>Generated by <a href="http://www.gnu.org/software/emacs/">Emacs</a> 24.x (<a href="http://orgmode.org">Org mode</a> 8.x)</p>
+        <p>
+          Copyright &copy; 2012 - <span id="footerYear"></span> <a href="mailto:paul &lt;dot&gt; elder &lt;at&gt; amanokami &lt;dot&gt; net">Paul Elder</a>
+          &nbsp;&nbsp;-&nbsp;&nbsp;
+          Powered by <a href="https://github.com/kelvinh/org-page" target="_blank">org-page</a>
+          <script type="text/javascript">document.getElementById("footerYear").innerHTML = (new Date()).getFullYear();</script>
+        </p>
+      </div>
+    </div>
+
+  </body>
+</html>

@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <title>Minecraft Server with Emacs - Amanokami Blog</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Paul Elder" />
+    <meta name="description" content="Setting up a Minecraft server at home with Emacs" />
+    <meta name="keywords" content="minecraft, emacs" />
+    <link rel="stylesheet" href="/media/css/main.css" type="text/css">
+    <link rel="stylesheet" href="/media/css/prettify.css" type="text/css">
+  </head>
+  <body class="container">
+    <div>
+      <header class="masthead">
+        <h1 class="masthead-title"><a href="/">Amanokami Blog</a></h1>
+        <p>Emacs of an IB Student</p>
+        <ul>
+          <li><a href="/blog/">Blog</a></li>
+          <li><a href="/tags/">Tags</a></li>
+          <li><a href="/about/">About</a></li>
+          <li><a href="https://github.com/Rahi374">GitHub</a></li>
+          <li><a href="/rss.xml">RSS</a></li>
+        </ul>
+        <form method="get" id="searchform" action="//www.google.com/search">
+          <input type="text" class="field" name="q" id="s" placeholder="Search">
+          <input type="hidden" name="as_sitesearch" value="amanokami.net">
+        </form>
+      </header>
+    </div>
+
+<div>
+<div class="post">
+<h1>Minecraft Server with Emacs</h1>
+
+<div id="outline-container-sec-1" class="outline-2">
+<h2 id="sec-1">Introduction</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+So I haven't posted anything in a week or two, and I guess I'm deviating from the main theme of my blog, especially with a bunch of AP content for an IB student. Anyway, at least we'll be going back to Emacs, and this time how to host a Minecraft server with scripts without mods. I suppose this post won't be long.
+</p>
+
+<p>
+I got out an unused, strong laptop at home and got Java and the Minecraft server jar and just ran it (with port forwarding from the router) inside screen so that I could disconnect from the server and still have it run. I also had to mess with systemd-logind to make the computer not sleep when the screen was closed.
+</p>
+
+<p>
+Anyway the most annoying part was that I couldn't run any scripts and I had no tab-completion in the server, and searching the internet only lead me to Craftbukkit, whose server I couldn't download thanks to DMCA complaints from Mojang.
+</p>
+
+<p>
+So, I turned to Emacs.
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-2" class="outline-2">
+<h2 id="sec-2">The Server</h2>
+<div class="outline-text-2" id="text-2">
+<p>
+I used screen and emacs24, which can be apt-get fairly easily.
+</p>
+
+<p>
+Then we start the screen with a name:
+</p>
+
+<div class="org-src-container">
+
+<pre class="src src-bash">screen -r mcserver
+</pre>
+</div>
+
+<p>
+And within the screen we start Emacs. I actually remember that I had Emacs Live on it which makes Emacs nice and flashy, plus it came with the Emacs packages I used to upgrade the Minecraft serving experience. Check out <a href="https://github.com/overtone/emacs-live">https://github.com/overtone/emacs-live</a> for more information on Emacs Live.
+</p>
+
+<p>
+The server is actually run in shell-mode (M-x shell), which I found from experience was better than ansi-term and eshell (which I think barely worked at all).
+</p>
+
+<p>
+The computer is just a strong laptop with 8GB of memory, so I gave 7GB to Minecraft, which makes it run nice and smoothly:
+</p>
+
+<div class="org-src-container">
+
+<pre class="src src-bash">java -jar java -Xmx7168M -Xms7168M -jar minecraft_server.1.8.9.jar nogui
+</pre>
+</div>
+
+<p>
+Within the server directory, of course.
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-3" class="outline-2">
+<h2 id="sec-3">The Power of Emacs</h2>
+<div class="outline-text-2" id="text-3">
+<p>
+The main component of Emacs that I used to get tab-completion (which was the thing I wanted the most) was a combination of yasnippet and auto-complete-mode, both which come with Emacs Live. These could be installed manually as well, of course, but I just happened to have Emacs Live.
+</p>
+
+<p>
+For auto-complete, within the ~/.dict file I have all the commands, the names of my users (I use a whitelist so it's fairly short), the gamerules, the enchantment names, the status names, and the slot names (for /replaceitem). Of course, more things could be added, but this was all I needed.
+</p>
+
+<p>
+For yasnippet, I just added snippets (M-x yas-new-snippet) of long commands that I use commonly. For instance, I like to summon mobs at the location of a player, so I have a snippet for that:
+</p>
+
+<div class="org-src-container">
+
+<pre class="src src-yas"># -*- mode: snippet; require-final-newline: nil -*-
+# name: summon-mob-at-character
+# key: smab
+# binding: direct-keybinding
+# --
+execute $1 ~ ~ ~ summon $2 ~ ~ ~ $0
+</pre>
+</div>
+
+<p>
+$0 where the cursor ends after summoning the snippet, $1 where the cursor is placed first, and $2 where the cursor is placed last. auto-complete lets me tab-complete the player name at $1 and the mob name at $2.
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-4" class="outline-2">
+<h2 id="sec-4">Conclusion</h2>
+<div class="outline-text-2" id="text-4">
+<p>
+So with a combination of screen and Emacs with auto-complete-mode and yasnippet we can get primitive tab-completion and ease the typing a bit.
+</p>
+
+<p>
+It's primitive but it works. It can't do as much as plugins or mods can do though, such as getting player positions or detecting griefing and hacks. If only Craftbukkit would work...
+</p>
+
+<p>
+Hopefully I can get Emacs to read the server log input live and get it to react to things happening. That would be cool.
+</p>
+</div>
+</div>
+
+</div>
+</div>
+    <div>
+      <div class="post-meta">
+        <span title="post date" class="post-info">2016-04-14</span>
+        <span title="last modification date" class="post-info">2016-05-16</span>
+        <span title="tags" class="post-info"><a href="/tags/minecraft/">minecraft</a>, <a href="/tags/emacs/">emacs</a></span>
+        <span title="author" class="post-info">Paul Elder</span>
+      </div>
+      <section>
+        <h1>Comments</h1>
+        <div id="disqus_thread"></div>
+        <script type="text/javascript">
+          //var disqus_developer = 1;
+          var disqus_identifier = "/blog/2016/04/14/minecraft-server-with-emacs";
+          var disqus_url = "http://amanokami.net/blog/2016/04/14/minecraft-server-with-emacs";
+          var disqus_shortname = 'amanokami';
+          /* * * DON'T EDIT BELOW THIS LINE * * */
+          (function() {
+          var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+          dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+          (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+          })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+        <a href="//disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+      </section>
+      <script src="//code.jquery.com/jquery-latest.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.js"></script>
+      <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      <script src="/media/js/main.js"></script>
+      <div class="footer">
+        <p>Generated by <a href="http://www.gnu.org/software/emacs/">Emacs</a> 24.x (<a href="http://orgmode.org">Org mode</a> 8.x)</p>
+        <p>
+          Copyright &copy; 2012 - <span id="footerYear"></span> <a href="mailto:paul &lt;dot&gt; elder &lt;at&gt; amanokami &lt;dot&gt; net">Paul Elder</a>
+          &nbsp;&nbsp;-&nbsp;&nbsp;
+          Powered by <a href="https://github.com/kelvinh/org-page" target="_blank">org-page</a>
+          <script type="text/javascript">document.getElementById("footerYear").innerHTML = (new Date()).getFullYear();</script>
+        </p>
+      </div>
+    </div>
+
+  </body>
+</html>

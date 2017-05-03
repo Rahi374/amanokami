@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <title>AP Calc BC in a week - Part 1 - Amanokami Blog</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Paul Elder" />
+    <meta name="description" content="Learning AP Calculus BC in a week - Part 1" />
+    <meta name="keywords" content="ap" />
+    <link rel="stylesheet" href="/media/css/main.css" type="text/css">
+    <link rel="stylesheet" href="/media/css/prettify.css" type="text/css">
+  </head>
+  <body class="container">
+    <div>
+      <header class="masthead">
+        <h1 class="masthead-title"><a href="/">Amanokami Blog</a></h1>
+        <p>Emacs of an IB Student</p>
+        <ul>
+          <li><a href="/blog/">Blog</a></li>
+          <li><a href="/tags/">Tags</a></li>
+          <li><a href="/about/">About</a></li>
+          <li><a href="https://github.com/Rahi374">GitHub</a></li>
+          <li><a href="/rss.xml">RSS</a></li>
+        </ul>
+        <form method="get" id="searchform" action="//www.google.com/search">
+          <input type="text" class="field" name="q" id="s" placeholder="Search">
+          <input type="hidden" name="as_sitesearch" value="amanokami.net">
+        </form>
+      </header>
+    </div>
+
+<div>
+<div class="post">
+<h1>AP Calc BC in a week - Part 1</h1>
+
+<div id="outline-container-sec-1" class="outline-2">
+<h2 id="sec-1">Introduction</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+Today we'll be doing:
+</p>
+<ul class="org-ul">
+<li>1F Parametrically Defined Functions
+</li>
+<li>1G Polar Functions
+</li>
+<li>3F Derivatives of Parametrically Defined Funcitons
+</li>
+<li>3J Indeterminate Forms and L'Hopital's Rule
+</li>
+</ul>
+
+<p>
+Let's start!
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-2" class="outline-2">
+<h2 id="sec-2">1F Parametrically Defined Functions</h2>
+<div class="outline-text-2" id="text-2">
+<p>
+So these are basically <b>pairs</b> of functions with $$x=f(t), y=f(t)$$. \(t\) is the parameter.
+</p>
+</div>
+
+<div id="outline-container-sec-2-1" class="outline-3">
+<h3 id="sec-2-1">Parametric to Cartesian</h3>
+<div class="outline-text-3" id="text-2-1">
+<p>
+To turn a pair of parametric equations into a Cartesian equation, make \(t\) the subject of the \(y\) parametric equation, ie $$t=f(y)$$, then you can substitute \(f(y)\) in for \(t\) in \(x\)'s parametric equation: $$x=f(t)=f(f(y))$$.
+</p>
+
+<p>
+For example:
+</p>
+\begin{equation}
+x = 2t + 1, y = t^2 \\
+x = 2t + 1, t = \sqrt{y} \\
+x = 2(\sqrt{y}) + 1
+\end{equation}
+</div>
+</div>
+
+<div id="outline-container-sec-2-2" class="outline-3">
+<h3 id="sec-2-2">Parametric to Cartesian (relation)</h3>
+<div class="outline-text-3" id="text-2-2">
+<p>
+A modified example from the book, which follows basically the same method as above, but \(t\) is made the subjects of both equations along with a trig function. Then a trig identity can be used to form a relation.
+</p>
+
+<p>
+For example:
+</p>
+\begin{equation}
+x = 6\sin t, y = 7\cos t \\
+\sin t = \frac{x}{6}, \cos t = \frac{y}{7} \\
+\sin^2 t + \cos^2 t = 1 \\
+\frac{x^2}{36} + \frac{y^2}{49} = 1
+\end{equation}
+</div>
+</div>
+
+<div id="outline-container-sec-2-3" class="outline-3">
+<h3 id="sec-2-3">Inverse Functions</h3>
+<div class="outline-text-3" id="text-2-3">
+<p>
+This is some pretty cool magic. When you find \(f^{-1}(x)\) of \(f(x)\), you are simply switching \(x\) and \(y\) in the equation.
+</p>
+
+<p>
+So for instance, if you had an equation $$f(x) = x^2 + x + 1$$, remember that \(x=t\) is the independent variable and \(f(x)=y\), and you can let $$x=t, y=t^2+t+1$$. Now, just switch \(x\) and \(y\) !
+$$x=t^2+t+1, y=t$$
+And you've got your inverse function! Which you could convert back to a Cartesian equation by just plugging in \(y\) for \(t\).
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-2-4" class="outline-3">
+<h3 id="sec-2-4">Calculator Magic</h3>
+<div class="outline-text-3" id="text-2-4">
+<p>
+On Casio we got Graph (5) -&gt; Type (F3) -&gt; Param (F3, on an empty equation entry) and then we can easily input a parametric equation.
+</p>
+
+<p>
+The book also suggests graphing relations with the subject \(x\) equal to polynomials of \(y\) with parametric equations, but us Casio people can disregard that.
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-2-5" class="outline-3">
+<h3 id="sec-2-5">Take-home message</h3>
+<div class="outline-text-3" id="text-2-5">
+<ul class="org-ul">
+<li>Get one of the parametric equations to be equal to \(t\), then plug into the other (Parametric to Cartesian)
+</li>
+<li>Get both equal to \(t\) something, and equate to each other or use a trig identity (Parametric to Cartesian trig)
+<ul class="org-ul">
+<li>\(x=t\), \(y=f(x)\), swap \(x\) and \(y\) so that \(x=f(x)\) and \(y=t\), and easy inversions!
+</li>
+</ul>
+</li>
+<li>Easy to graph.
+</li>
+</ul>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-3" class="outline-2">
+<h2 id="sec-3">1G Polar Functions</h2>
+<div class="outline-text-2" id="text-3">
+<p>
+Woah. Coordinates are \((r,\theta)\), where \(r\) is the distance from the origin and \(\theta\) is the angle of rotation. Polar functions are $$r=f(\theta)$$, so I guess that means that the distance depends on the angle.
+</p>
+
+<p>
+Oh hey this section looks short.
+</p>
+</div>
+
+<div id="outline-container-sec-3-1" class="outline-3">
+<h3 id="sec-3-1">Calm down, it's just an equation</h3>
+<div class="outline-text-3" id="text-3-1">
+<p>
+No really it is.
+</p>
+
+<p>
+Consider a polar function \(r=5+6\sin\theta\).
+</p>
+
+<p>
+The book only gives this (modified) example, so I'm guessing that's all we have to worry about.
+</p>
+
+<ol class="org-ol">
+<li>For what values of \(r\) does the curve pass through the origin?
+
+<p>
+Remember that it's just an equation. At the origin, the distance from the origin is 0, so \(r=0\), and that means $$0=5+6\sin\theta$$. Now it's just simple algebra magic to find \(\theta\).
+</p>
+</li>
+
+<li>For what values of \(r\) does the curve pass through the circle \(r=2\)?
+
+<p>
+Still just an equation. $$r=2=5+6\sin\theta$$, and then the usual.
+</p>
+
+<p>
+That was easy. I'm guessing we won't have to worry about intersecting with other functions, so that's convenient.
+</p>
+</li>
+</ol>
+</div>
+</div>
+
+<div id="outline-container-sec-3-2" class="outline-3">
+<h3 id="sec-3-2">Polar to Parametric</h3>
+<div class="outline-text-3" id="text-3-2">
+<p>
+This isn't that hard either. Just remember:
+$$x=r\cos\theta, y=r\sin\theta$$.
+This means that if you need to convert a polar equation to parametric, just plug in the whole polar function in \(r\) and then multiply it by \(\cos\theta\) or \(\sin\theta\) !
+</p>
+
+<p>
+That also makes finding \((x,y)\) coordinates a lot easier. Just convert to parametric and vòila, you've already got your \((x,y)\) !
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-3-3" class="outline-3">
+<h3 id="sec-3-3">Calculator Magic</h3>
+<div class="outline-text-3" id="text-3-3">
+<p>
+Casio's got a mode for this too. Graph -&gt; Type -&gt; r=
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-3-4" class="outline-3">
+<h3 id="sec-3-4">Take-home message</h3>
+<div class="outline-text-3" id="text-3-4">
+<ul class="org-ul">
+<li>Calm down, it's just an equation.
+</li>
+<li>\(x=r\cos\theta\) and \(y=r\sin\theta\)
+</li>
+</ul>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-4" class="outline-2">
+<h2 id="sec-4">3F Derivatives of Parametrically Defined Functions</h2>
+<div class="outline-text-2" id="text-4">
+<p>
+This looks pretty simple as well. $$\frac{dy}{dx}=\frac{y'}{x'}$$, or more formally:
+$$\frac{dy}{dx} = \frac{\frac{dy}{dt}}{\frac{dx}{dt}}$$.
+</p>
+
+<p>
+Also, $$\frac{d^2y}{dx^2} = \frac{d}{dx}(\frac{dy}{dx}) = \frac{\frac{d}{dt}\frac{dy}{dx}}{\frac{dx}{dt}}$$
+I suppose informally that would be $$\frac{d^2y}{dx^2} = \frac{\frac{dy}{dx}'}{x'}$$
+</p>
+
+<p>
+Assuming that \(x=f(t), y=g(t)\) are diffrentiable.
+</p>
+</div>
+
+<div id="outline-container-sec-4-1" class="outline-3">
+<h3 id="sec-4-1">Example</h3>
+<div class="outline-text-3" id="text-4-1">
+<p>
+Find the first and second derivative of \(x=2t^3,y=t^4\). (I know the book uses trig functions of \(t\))
+</p>
+
+<p>
+$$\frac{dy}{dx} = \frac{y'}{x'} = \frac{4t^3}{6t^2} = \frac{2}{3}t$$
+</p>
+
+\begin{equation}
+\frac{d^2y}{dx^2} = \frac{\frac{dy}{dx}'}{x'} \\
+= \frac{\frac{2}{3}}{6t^2} \\
+= \frac{2}{18t^2} \\
+= \frac{1}{9t^2}
+\end{equation}
+</div>
+</div>
+
+<div id="outline-container-sec-4-2" class="outline-3">
+<h3 id="sec-4-2">Equation of tangent</h3>
+<div class="outline-text-3" id="text-4-2">
+<p>
+I guess they give you the parameter, so just plug that in to your \(\frac{dy}{dx}\) and you got the \(m\) part of the linear equation.
+</p>
+
+<p>
+For the \((x,y)\), plug in the parameter to the equations for \(x\) and \(y\), and you've got a point to get the \(c\) from for the linear equation.
+</p>
+
+<p>
+Easy peasy.
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-4-3" class="outline-3">
+<h3 id="sec-4-3">Collision with Parametric equations</h3>
+<div class="outline-text-3" id="text-4-3">
+<p>
+Equate \(x_1\) and \(x_2\) and get the resulting \(t\). Then test that \(t\) while equating \(y_1\) and \(y_2\), and the the \(y\) s are equal, you got a true collision point!
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-4-4" class="outline-3">
+<h3 id="sec-4-4">Take-home message</h3>
+<div class="outline-text-3" id="text-4-4">
+<ul class="org-ul">
+<li>For parametric equations, \(\frac{dy}{dx}=\frac{y'}{x'}\)
+</li>
+<li>And \(\frac{d^2y}{dx^2}=\frac{\frac{dy}{dx}'}{x'}\)
+</li>
+<li>Plug in parameters for tangent lines (easy algebra)
+</li>
+<li>Test equality of \(x\) s and \(y\) s for a given \(t\) resulting from the equivalence of \(t\) from the \(x\) s.
+</li>
+</ul>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-5" class="outline-2">
+<h2 id="sec-5">3J Indeterminate Forms and L'Hôpital's Rule</h2>
+<div class="outline-text-2" id="text-5">
+</div><div id="outline-container-sec-5-1" class="outline-3">
+<h3 id="sec-5-1">Indeterminate forms</h3>
+<div class="outline-text-3" id="text-5-1">
+<p>
+Uhh, $$\frac{0}{0}, \frac{\infty}{\infty}, 0 \times \infty, \infty-\infty, 0^0, 1^\infty, \infty^0$$
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-5-2" class="outline-3">
+<h3 id="sec-5-2">L'Hôpital's Rule</h3>
+<div class="outline-text-3" id="text-5-2">
+<p>
+This rule is used to find limits of indeterminates of the form \(\frac{0}{0}\) and \(\frac{\infty}{\infty}\). It won't work if the limits are not indeterminates of these two forms.
+</p>
+
+<p>
+Looks like the book has four rules, but basically if your limit to a finite number or to infinity results in \(\frac{0}{0}\) or \(\frac{\infty}{\infty}\), then you can differentiate the numerator and the denominator functions and try again.
+$$\lim_{x\to a} \frac{f(x)}{g(x)} = \lim_{x\to a} \frac{f'(x)}{g'(x)}$$
+$$\lim_{x\to \infty} \frac{f(x)}{g(x)} = \lim_{x\to \infty} \frac{f'(x)}{g'(x)}$$
+</p>
+
+<p>
+The rule can be repeated. Of course, if either \(f(x)\) or \(g(x)\) cannot be differentiated, then the rule does not work.
+</p>
+
+<p>
+I don't think I need to give examples, this is pretty intuitive.
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-5-3" class="outline-3">
+<h3 id="sec-5-3">Other indeterminate forms</h3>
+<div class="outline-text-3" id="text-5-3">
+<p>
+If you get indeterminates of the form \(0\times\infty\), then try to convert it to an equivalent indeterminate of the form \(\frac{0}{0}\). It should work.
+</p>
+
+<p>
+ Example (this is from the book):
+$$ \lim_{x \to \infty} x\sin \frac{1}{x} = \lim_{x \to \infty} \frac{\sin \frac{1}{x}}{\frac{1}{x}} $$
+</p>
+
+
+<p>
+For the indeterminates that are exponents, like \(1^\infty\) and \(\infty^0\), we can use the natural log to "remove" the exponent.
+</p>
+
+<p>
+Example with \(1^\infty\) (from the book):
+</p>
+\begin{equation}
+\lim_{x\to 0} (1+x)^\frac{1}{x} \\
+\text{let} y = (1+x)^\frac{1}{x} \\
+\ln y = \frac{1}{x}\ln (1+x) \\
+\lim_{x\to 0} \ln y = \lim_{x\to 0}\frac{1}{x}\ln (1+x)
+\end{equation}
+<p>
+And now it's \(0\times\infty\), so we can just do what we did earlier. Don't forget to remove the \(\ln\) at the end!
+</p>
+
+<p>
+Example with \(\infty^0\) (also from the book):
+</p>
+\begin{equation}
+\lim_{x\to\infty} x^\frac{1}{x} \\
+\text{let} y = x^\frac{1}{x} \\
+\ln y = \frac{1}{x}\ln x = \frac{ln x}{x} \\
+\end{equation}
+<p>
+Basically it's the same as the previous example.
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-5-4" class="outline-3">
+<h3 id="sec-5-4">Take-home message</h3>
+<div class="outline-text-3" id="text-5-4">
+<ul class="org-ul">
+<li>If your limit end up as \(\frac{0}{0}\) or \(\frac{\infty}{\infty}\), then you can differentiate the numerator and the denominator functions and try again to get the limit
+</li>
+<li>If you get \(0\times\infty\), rearrange the limit to \(\frac{0}{0}\) and try the above method
+</li>
+<li>If you get exponents, then remove the exponent with a natural log, and then combine the above methods
+</li>
+</ul>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-6" class="outline-2">
+<h2 id="sec-6">Conclusion</h2>
+<div class="outline-text-2" id="text-6">
+<p>
+So far so good.
+</p>
+</div>
+</div>
+
+</div>
+</div>
+    <div>
+      <div class="post-meta">
+        <span title="post date" class="post-info">2016-03-20</span>
+        <span title="last modification date" class="post-info">2016-05-16</span>
+        <span title="tags" class="post-info"><a href="/tags/ap/">ap</a></span>
+        <span title="author" class="post-info">Paul Elder</span>
+      </div>
+      <section>
+        <h1>Comments</h1>
+        <div id="disqus_thread"></div>
+        <script type="text/javascript">
+          //var disqus_developer = 1;
+          var disqus_identifier = "/blog/2016/03/20/ap-calc-bc-1";
+          var disqus_url = "http://amanokami.net/blog/2016/03/20/ap-calc-bc-1";
+          var disqus_shortname = 'amanokami';
+          /* * * DON'T EDIT BELOW THIS LINE * * */
+          (function() {
+          var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+          dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+          (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+          })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+        <a href="//disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+      </section>
+      <script src="//code.jquery.com/jquery-latest.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.js"></script>
+      <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      <script src="/media/js/main.js"></script>
+      <div class="footer">
+        <p>Generated by <a href="http://www.gnu.org/software/emacs/">Emacs</a> 24.x (<a href="http://orgmode.org">Org mode</a> 8.x)</p>
+        <p>
+          Copyright &copy; 2012 - <span id="footerYear"></span> <a href="mailto:paul &lt;dot&gt; elder &lt;at&gt; amanokami &lt;dot&gt; net">Paul Elder</a>
+          &nbsp;&nbsp;-&nbsp;&nbsp;
+          Powered by <a href="https://github.com/kelvinh/org-page" target="_blank">org-page</a>
+          <script type="text/javascript">document.getElementById("footerYear").innerHTML = (new Date()).getFullYear();</script>
+        </p>
+      </div>
+    </div>
+
+  </body>
+</html>

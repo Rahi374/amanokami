@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <title>AP Calc BC in a week - Part 3 - Amanokami Blog</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Paul Elder" />
+    <meta name="description" content="Learning AP Calculus BC in a week - Part 3" />
+    <meta name="keywords" content="ap" />
+    <link rel="stylesheet" href="/media/css/main.css" type="text/css">
+    <link rel="stylesheet" href="/media/css/prettify.css" type="text/css">
+  </head>
+  <body class="container">
+    <div>
+      <header class="masthead">
+        <h1 class="masthead-title"><a href="/">Amanokami Blog</a></h1>
+        <p>Emacs of an IB Student</p>
+        <ul>
+          <li><a href="/blog/">Blog</a></li>
+          <li><a href="/tags/">Tags</a></li>
+          <li><a href="/about/">About</a></li>
+          <li><a href="https://github.com/Rahi374">GitHub</a></li>
+          <li><a href="/rss.xml">RSS</a></li>
+        </ul>
+        <form method="get" id="searchform" action="//www.google.com/search">
+          <input type="text" class="field" name="q" id="s" placeholder="Search">
+          <input type="hidden" name="as_sitesearch" value="amanokami.net">
+        </form>
+      </header>
+    </div>
+
+<div>
+<div class="post">
+<h1>AP Calc BC in a week - Part 3</h1>
+
+<div id="outline-container-sec-1" class="outline-2">
+<h2 id="sec-1">Introduction</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+Today we'll be doing:
+</p>
+<ul class="org-ul">
+<li>6C Integrals involving Parametrically Defined Functions
+</li>
+<li>7C Arc Length
+</li>
+<li>7D Improper Integrals
+</li>
+<li>8B Motion along a Plane Curve
+</li>
+</ul>
+
+<p>
+Let's start!
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-2" class="outline-2">
+<h2 id="sec-2">6C Integrals involving Parametrically Defined Functions</h2>
+<div class="outline-text-2" id="text-2">
+<p>
+The book only gives us two examples. From these two examples I gather that we must substitute the parametric equations into \(x\) and \(y\), and convert the \(dx\) into \(d\) of whatever the parametric equations are in terms of.
+</p>
+
+<p>
+Example: \(\int_0^4 xy dx\), \(x=4\sin\theta\), \(y=2\sin\theta\)
+</p>
+
+<p>
+We would simply plug in \(x\) into \(x\) and \(y\) into \(y\). \(dx=4\cos\theta d\theta\), so we plug in that for \(dx\). The limits also have to be converted, which we can just do by plugging the limits into the \(x\) equations and finding \(\theta\) : \(0=\sin 0\), \(4=4\sin\frac{\pi}{2}\)
+</p>
+
+<p>
+The integral then becomes \(\int_0^{\frac{\pi}{2}}4\sin\theta 2\sin\theta 4\cos\theta d\theta\) and we can compute it normally.
+</p>
+</div>
+
+<div id="outline-container-sec-2-1" class="outline-3">
+<h3 id="sec-2-1">Take-home message</h3>
+<div class="outline-text-3" id="text-2-1">
+<p>
+I don't think we need one.
+</p>
+<ul class="org-ul">
+<li>Plug in \(x\) and \(y\) and the \(dx\) from the parametric equation, and convert the limits with the parametric equation.
+</li>
+</ul>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-3" class="outline-2">
+<h2 id="sec-3">7C Arc Length</h2>
+<div class="outline-text-2" id="text-3">
+<p>
+Okay... hm. This looks like memorization.
+</p>
+
+<p>
+So first thing to remember is this:
+$$ds^2 = dx^2 + dy^2$$
+</p>
+
+<p>
+It kinda looks like Pythagoras. From the diagram in the book, it looks like \(ds\) is the arc, \(dx\) is the "run" and \(dy\) is the "rise". Kinda like a hypotenuse and two legs.
+</p>
+
+<p>
+I suppose we can do something like
+</p>
+<ul class="org-ul">
+<li>\(ds = \sqrt{dx^2 + dy^2}\)
+</li>
+<li>\(s = \int_a^b \sqrt{dx^2 + dy^2}\)
+</li>
+</ul>
+
+<p>
+So the find the <b>arc length</b> from <b>parametric equations</b>, we use:
+$$s = \int_a^b \sqrt{\left(\frac{dx}{dt}\right)^2+\left(\frac{dy}{dt}\right)^2} dt$$
+Where \(a\) and \(b\) are values of \(t\) where the arc is in between.
+</p>
+
+<p>
+For the arc length of <b>\(y=f(x)\)</b>, we use:
+$$s = \int_a^b \sqrt{1+\left(\frac{dy}{dx}\right)^2} dx$$
+Where \(a\) and \(b\) are values of \(x\) where the arc is in between.
+</p>
+
+<p>
+And for the arc length of <b>\(x=g(y)\)</b>, we use:
+$$s = \int_a^b \sqrt{1+\left(\frac{dx}{dy}\right)^2} dy$$
+Where \(a\) and \(b\) are values of \(y\) where the arc is in between.
+</p>
+
+<p>
+I have no trick for this. Just... memorize it. And practice it. You can try to use the pseudo-Pythagoras, I suppose.
+$$ds^2 = dx^2 + dy^2$$
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-4" class="outline-2">
+<h2 id="sec-4">7D Improper Integrals</h2>
+<div class="outline-text-2" id="text-4">
+<p>
+There are two types of improper intergrals:
+</p>
+<ol class="org-ol">
+<li>At least one of the limits of the (definite) integral is infinite (making the interval unbounded)
+</li>
+<li>The function being (definitely) integrated has a point of discontinuity
+</li>
+</ol>
+<p>
+I don't think I need to give examples.
+</p>
+</div>
+
+<div id="outline-container-sec-4-1" class="outline-3">
+<h3 id="sec-4-1">Improper Integral 1 (infinite limit)</h3>
+<div class="outline-text-3" id="text-4-1">
+<p>
+To compute this type of improper integral, we treat the infinite limit as a limit (haha).
+$$\int_a^\infty f(x) dx = \lim_{b\to\infty} \int_a^b f(x) dx$$
+</p>
+
+<p>
+Then we just compute the definite integral, leaving \(b\) as the variable \(b\), and the apply the limit.
+</p>
+
+<p>
+Example (from the book) \(\int_1^\infty \frac{1}{x^2} dx\):
+</p>
+<ul class="org-ul">
+<li>\(= \lim_{b\to\infty} \int_1^b \frac{1}{x^2} dx\)
+</li>
+<li>\(= \lim_{b\to\infty} -\frac{1}{x}|_1^b\)
+</li>
+<li>\(= \lim_{b\to\infty} \left(-\frac{1}{b} - -\frac{1}{1} \right)\)
+</li>
+<li>\(= \lim_{b\to\infty} \left(1 -\frac{1}{b} \right)\)
+</li>
+<li>\(= 1 - \frac{1}{\infty}\)
+</li>
+<li>\(=1\)
+</li>
+</ul>
+
+<p>
+Apparently \(\int_1^\infty \frac{1}{x^n} dx\) <b>converges if \(n>1\)</b> and <b>diverges if \(n\le 1\)</b>.
+</p>
+
+<p>
+Uhh, practice with some examples to get the hang of it, I guess.
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-4-2" class="outline-3">
+<h3 id="sec-4-2">Improper Integral 2 (discontinuous function)</h3>
+<div class="outline-text-3" id="text-4-2">
+<p>
+To compute this type of improper integral, we make the integral limits into limits. That's just another pun so I'll demonstrate:
+</p>
+
+<p>
+If \(f(x)\) becomes infinite at \(a\),
+$$\int_a^b f(x) dx = \lim_{k\to a^+} \int_k^b f(x) dx$$
+</p>
+
+<p>
+If \(f(x)\) becomes infinite at \(b\),
+$$\int_a^b f(x) dx = \lim_{k\to b^-} \int_a^k f(x) dx$$
+</p>
+
+<p>
+If \(f(x)\) becomes infinite at at \(c\) and \(c\) is in between \(a\) and \(b\),
+$$\int_a^b f(x) dx = \lim_{k\to c^-} \int_a^k f(x) dx + \lim_{m\to c^+} \int_m^b f(x) dx$$
+</p>
+
+<p>
+If the <b>limits exist, then the integral converges</b> and there is a solution. If the <b>limits don't exist, then the integral diverges</b> and there is no solution.
+</p>
+
+<p>
+The construction of the limit-integrals should be intuitional. I'm not going to give an example for this one. The actual working is similar to the type 1 improper integral, just with the different limit set-up. Just do some practice problems.
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-4-3" class="outline-3">
+<h3 id="sec-4-3">The Comparison Test</h3>
+<div class="outline-text-3" id="text-4-3">
+<p>
+Ah. This seems pretty easy. So this method is used to determine if an improper integral will converge or diverge by comparing it to an integral that we already know.
+</p>
+
+<ol class="org-ol">
+<li>Convergence: If we know that \(\int g(x) dx\) converges, and we know that \(f(x) \le g(x)\), then \(f(x)\) converges.
+</li>
+<li>Divergence: If we know that \(\int g(x) dx\) diverges, and we know that \(f(x) \ge g(x)\), then \(f(x)\) diverges.
+</li>
+</ol>
+
+<p>
+This should be intuitional. In case 1, \(f(x)\) is always below \(g(x)\), and since \(g(x)\) converges, so must \(f(x)\). Case 2 is the opposite: \(f(x)\) is always above \(g(x)\), and since \(g(x)\) diverges, so must \(f(x)\). (non-rigorous proof)
+</p>
+
+<p>
+I'm not going to give examples (since I'd just copy them from the book anyway) and just do some practice problems, as always.
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-4-4" class="outline-3">
+<h3 id="sec-4-4">Take-home message</h3>
+<div class="outline-text-3" id="text-4-4">
+<ul class="org-ul">
+<li>Improper integrals have infinite bounds or points of discontinuity
+</li>
+<li>To evaluate such integrals, turn the infinite bound(s) or point(s) of discontinuity into a limit
+</li>
+<li>Comparison test: if a function is less than a converging function then it must also converge ; if a function is greater than a diverging function then it must also diverge
+</li>
+</ul>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-5" class="outline-2">
+<h2 id="sec-5">8B Motion along a Plane Curve</h2>
+<div class="outline-text-2" id="text-5">
+<p>
+Mmm. Remember when we had parametric equations and position vectors and velocity vectors and acceleration vectors?
+</p>
+
+<p>
+Apparently this section is basically problem-solving using those and calculus. Mostly stuff like "find the parametric equations of the motion of the &lt;object&gt;" or "find its position vector" or "find its &lt;position/velcity/acceleration&gt; at time t".
+</p>
+
+<p>
+It shouldn't be that bad. Just know your stuff and practice some problems.
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-6" class="outline-2">
+<h2 id="sec-6">Conclusion</h2>
+<div class="outline-text-2" id="text-6">
+<p>
+Sorry this post took so long and I'm starting to omit details. My style of studying/reviewing is getting the big picture and being able to piece together the smaller pictures from the big picture.
+</p>
+
+<p>
+Next time will be:
+</p>
+<ul class="org-ul">
+<li>9C Euler's Method
+</li>
+<li>9E3 Logistic Growth
+</li>
+</ul>
+
+<p>
+Ooh yay! Two more days! We're almost done~!
+</p>
+</div>
+</div>
+
+</div>
+</div>
+    <div>
+      <div class="post-meta">
+        <span title="post date" class="post-info">2016-03-23</span>
+        <span title="last modification date" class="post-info">2016-05-16</span>
+        <span title="tags" class="post-info"><a href="/tags/ap/">ap</a></span>
+        <span title="author" class="post-info">Paul Elder</span>
+      </div>
+      <section>
+        <h1>Comments</h1>
+        <div id="disqus_thread"></div>
+        <script type="text/javascript">
+          //var disqus_developer = 1;
+          var disqus_identifier = "/blog/2016/03/23/ap-calc-bc-in-a-week-part-3";
+          var disqus_url = "http://amanokami.net/blog/2016/03/23/ap-calc-bc-in-a-week-part-3";
+          var disqus_shortname = 'amanokami';
+          /* * * DON'T EDIT BELOW THIS LINE * * */
+          (function() {
+          var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+          dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+          (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+          })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+        <a href="//disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+      </section>
+      <script src="//code.jquery.com/jquery-latest.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.js"></script>
+      <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      <script src="/media/js/main.js"></script>
+      <div class="footer">
+        <p>Generated by <a href="http://www.gnu.org/software/emacs/">Emacs</a> 24.x (<a href="http://orgmode.org">Org mode</a> 8.x)</p>
+        <p>
+          Copyright &copy; 2012 - <span id="footerYear"></span> <a href="mailto:paul &lt;dot&gt; elder &lt;at&gt; amanokami &lt;dot&gt; net">Paul Elder</a>
+          &nbsp;&nbsp;-&nbsp;&nbsp;
+          Powered by <a href="https://github.com/kelvinh/org-page" target="_blank">org-page</a>
+          <script type="text/javascript">document.getElementById("footerYear").innerHTML = (new Date()).getFullYear();</script>
+        </p>
+      </div>
+    </div>
+
+  </body>
+</html>

@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="<%= @lang %>">
+  
+  <meta charset="UTF-8">
+  <meta name="author" content="<%= @author %>" />
+
+  <link rel="stylesheet" href="/media/css/index.css">
+  
+  <title><%= unless @title.empty? then @title + " - " end %> Amanokami Kai</title>
+
+
+  <header>
+    <h1>Amanokami Kai</h1>
+    
+    <nav>
+      <ul>
+	<li> <a href="/">Top</a>
+	<li> <a href="/blog">Blog</a>
+	<li> <a href="/about">About</a>
+	<li> <a href="/projects">Projects</a>
+	<li> <a href="https://github.com/Rahi374">GitHub</a>
+      </ul>
+    </nav>
+
+    <form method="get" id="searchform" action="//www.duckduckgo.com/">
+      <input type="hidden" name="sites" value="amanokami.net">
+      <input type="text" class="field" name="q" id="s" placeholder="Search">
+      <input type="submit" class="searchsubmit" value="🔎">
+      <a href="/rss.xml" class="rss">RSS</a>
+      <!--<a href="/atom.xml" class="rss">Atom</a>-->
+    </form>
+  </header>
+
+  <div id="content">
+    <%= @content %>
+  </div>
+
+  <hr>
+  <div class="post-meta">
+    <span title="post date" class="post-info"><%= if @mod_date == @post_date then @post_date else "Posted: " + @post_date end %></span>
+    <span title="last modification date" class="post-info"><%= if @mod_date == @post_date then "" else "Updated: " + @mod_date end %></span>
+    <span title="tags" class="post-info">
+      <% unless @tags.nil? then for tag in @tags do %>
+      <a href=<%= "/tag/" + tag + "/" %>> <%= tag %> </a>
+      <% end end %>
+    </span>
+    <span title="author" class="post-info"><%= @author %></span>
+  </div>
+
+  <hr>
+  <section>
+    <h3>Comments</h3>
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+      //var disqus_developer = 1;
+      var disqus_identifier = "<%= '/blog/' + @name %>";
+      var disqus_url = "<%= 'http://amanokami.net/blog/' + @name %>";
+      var disqus_shortname = 'amanokami';
+      /* * * DON'T EDIT BELOW THIS LINE * * */
+      (function() {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="//disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+  </section>
+  <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+
+  <div class="footer">
+    <p> <a href="http://www.fsf.org/associate/support_freedom/join_fsf?referrer=2442" style="color: white;"> <img src="/media/img/fsf-mini.png" width="129" height="15" style="width: 129px;" /> Help protect your freedom, join the Free Software Foundation </a>
+      
+    <p> <a href="http://www.anybrowser.org/campaign/" style="color: white;"> <img src="/media/img/any-browser.png" width="80" height="15" style="width: 80px" /> This website is viewable with any browser </a>
+
+    <p>
+      Copyright &copy; 2012 -  <%= Time.now.year %> <a href="mailto:paul &lt;dot&gt; elder &lt;at&gt; amanokami &lt;dot&gt; net">Paul Elder</a>
+    </p>
+  </div>
+</html>

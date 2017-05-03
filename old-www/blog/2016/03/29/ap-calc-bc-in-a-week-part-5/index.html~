@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <title>AP Calc BC in a week - Part 5 - Amanokami Blog</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Paul Elder" />
+    <meta name="description" content="Learning AP Calculus BC in a week - Part 5" />
+    <meta name="keywords" content="ap" />
+    <link rel="stylesheet" href="/media/css/main.css" type="text/css">
+    <link rel="stylesheet" href="/media/css/prettify.css" type="text/css">
+  </head>
+  <body class="container">
+    <div>
+      <header class="masthead">
+        <h1 class="masthead-title"><a href="/">Amanokami Blog</a></h1>
+        <p>Emacs of an IB Student</p>
+        <ul>
+          <li><a href="/blog/">Blog</a></li>
+          <li><a href="/tags/">Tags</a></li>
+          <li><a href="/about/">About</a></li>
+          <li><a href="https://github.com/Rahi374">GitHub</a></li>
+          <li><a href="/rss.xml">RSS</a></li>
+        </ul>
+        <form method="get" id="searchform" action="//www.google.com/search">
+          <input type="text" class="field" name="q" id="s" placeholder="Search">
+          <input type="hidden" name="as_sitesearch" value="amanokami.net">
+        </form>
+      </header>
+    </div>
+
+<div>
+<div class="post">
+<h1>AP Calc BC in a week - Part 5</h1>
+
+<div id="outline-container-sec-1" class="outline-2">
+<h2 id="sec-1">Introduction</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+Yay! Last day! Today is:
+</p>
+<ul class="org-ul">
+<li>10 Sequences and Series
+</li>
+</ul>
+
+<p>
+Let's start!
+</p>
+
+<p>
+This section is long so I'm going to have to split it up quite a bit...
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-2" class="outline-2">
+<h2 id="sec-2">10 Sequences and Series</h2>
+<div class="outline-text-2" id="text-2">
+</div><div id="outline-container-sec-2-1" class="outline-3">
+<h3 id="sec-2-1">What is a(n) (Infinite) Sequence?</h3>
+<div class="outline-text-3" id="text-2-1">
+<p>
+An <b>infinite sequence</b> is a function which has the natural numbers as the domain (not including 0). It is denoted as \(a_n\).
+</p>
+
+<p>
+An example of a sequence is \(a_n=\frac{1}{n}\), which results in the sequence \(\frac{1}{1},\frac{1}{2},\frac{1}{3}\cdots\frac{1}{n}\cdots\). \(\frac{1}{n}\) is often called the <span class="underline">nth term</span> of this sequence.
+</p>
+
+<p>
+I suppose this is to contrast sequences from the other functions that we deal with, whose domain consist of all the real numbers.
+</p>
+
+<p>
+A sequence \(a\) <b>converges to a finite number \(L\) if \(\lim_{n\to\infty}a_n=L\)</b>. If the limit does not exist then the sequence diverges.
+</p>
+
+<p>
+tl;dr A sequence is a (function) list of numbers, and if the limit ( \(n\to\infty\) ) of its function is \(L\), then it converges to \(L\).
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-2-2" class="outline-3">
+<h3 id="sec-2-2">What is a(n) (Infinite) Series?</h3>
+<div class="outline-text-3" id="text-2-2">
+<p>
+An <b>infinite series</b> is the sum of an infinite sequence.
+$$\sum_{k=1}^\infty a_k = a_1 + a_2 + a_3 + \cdots + a_n + \cdots$$
+Each element in the sum is a <i>term</i>, with \(a_n\) being the <span class="underline">nth term</span>, like in the sequence.
+</p>
+
+<p>
+The series \(\sum_{k=1}^\infty a_k\) can also be written as \(\sum a_k\) or \(\sum a_n\).
+</p>
+
+<p>
+tl;dr Add all the numbers in a sequence = series
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-2-3" class="outline-3">
+<h3 id="sec-2-3">Types of Series</h3>
+<div class="outline-text-3" id="text-2-3">
+<p>
+<b>p-series</b> is the series of form $$\sum_{k=1}^\infty \frac{1}{k^p}$$, where \(p\) is a constant.
+</p>
+
+<p>
+<b>Harmonic series</b> is the p-series where \(p=1\), ie $$\sum_{k=1}^\infty \frac{1}{k}$$
+</p>
+
+<p>
+<b>Geometric series</b> is the sum of a first term \(a\) and terms of a common ratio \(r\) : $$\sum_{k=1}^\infty ar^{k-1}$$
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-2-4" class="outline-3">
+<h3 id="sec-2-4">Convergence of a Series</h3>
+<div class="outline-text-3" id="text-2-4">
+<p>
+If there exists a finite number \(S\) such that \(\lim_{n\to\infty}\sum_{k=1}^ne a_k = S\), then the inifinite series is said to converge to \(S\).
+</p>
+
+<p>
+In this case, $$\sum_{k=1}^\infty = S$$.
+</p>
+
+<p>
+tl;dr If you keep adding and it approaches a number, then the series converges to that number
+</p>
+
+<p>
+There are a couple examples of proving that series are Divergent/convergent, but... I don't think I can reproduce these with an unseen problem, since these involve finding limits of summations, so... hopefully they can be reasoned through if they do come out.
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-2-5" class="outline-3">
+<h3 id="sec-2-5">Theorems of Convergence of Divergence</h3>
+<div class="outline-text-3" id="text-2-5">
+</div><div id="outline-container-sec-2-5-1" class="outline-4">
+<h4 id="sec-2-5-1">If \(\sum a_n\) converges, then \(\lim_{n\to\infty}a_n=0\)</h4>
+<div class="outline-text-4" id="text-2-5-1">
+<ul class="org-ul">
+<li>By contraposition, this also means that if \(\lim_{k\to\infty}a_n\neq 0\), \(\sum a_n\) diverges
+</li>
+<li>The converse is not true; if the limit is zero, the summation may or may not converge (if you know your truth tables this won't be a problem)
+</li>
+<li>Note that this means that the <span class="underline">terms</span> go to 0, not the series
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-sec-2-5-2" class="outline-4">
+<h4 id="sec-2-5-2">You can add a finite number of terms to a summation without affecting its convergence/divergence</h4>
+<div class="outline-text-4" id="text-2-5-2">
+<ul class="org-ul">
+<li>This means that \(\sum_{k=1}^\infty a_k\) and \(\sum_{k=m}^\infty a_k\) both converge or both diverge
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-sec-2-5-3" class="outline-4">
+<h4 id="sec-2-5-3">A series can be multiplied by a nonzero constant without affecting its convergence/divergence</h4>
+<div class="outline-text-4" id="text-2-5-3">
+<ul class="org-ul">
+<li>This means that \(\sum_{k=1}^\infty a_k\) and \(c\sum_{k=1}^\infty a_k\) both converge or both diverge
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-sec-2-5-4" class="outline-4">
+<h4 id="sec-2-5-4">If two series converge, the sum of the two series converges</h4>
+<div class="outline-text-4" id="text-2-5-4">
+<ul class="org-ul">
+<li>If \(\sum a_n\) and \(\sum b_n\) both converge, \(\sum (a_n+b_n)\) converges
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-sec-2-5-5" class="outline-4">
+<h4 id="sec-2-5-5">If the terms of a convergent series are regrouped, the new series is also convergent</h4>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-3" class="outline-2">
+<h2 id="sec-3">Conclusion</h2>
+<div class="outline-text-2" id="text-3">
+<p>
+Uhh okay I've had this buffer open for too long I need to publish this prematurely, plus the post will become way too long anyway.
+</p>
+
+<p>
+Chapter 10 is longer than I expected... I'll have to break it up. Next time we'll be doing Tests for convergences, then after that we'll do the Power series.
+</p>
+</div>
+</div>
+
+</div>
+</div>
+    <div>
+      <div class="post-meta">
+        <span title="post date" class="post-info">2016-03-29</span>
+        <span title="last modification date" class="post-info">2016-05-16</span>
+        <span title="tags" class="post-info"><a href="/tags/ap/">ap</a></span>
+        <span title="author" class="post-info">Paul Elder</span>
+      </div>
+      <section>
+        <h1>Comments</h1>
+        <div id="disqus_thread"></div>
+        <script type="text/javascript">
+          //var disqus_developer = 1;
+          var disqus_identifier = "/blog/2016/03/29/ap-calc-bc-in-a-week-part-5";
+          var disqus_url = "http://amanokami.net/blog/2016/03/29/ap-calc-bc-in-a-week-part-5";
+          var disqus_shortname = 'amanokami';
+          /* * * DON'T EDIT BELOW THIS LINE * * */
+          (function() {
+          var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+          dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+          (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+          })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+        <a href="//disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+      </section>
+      <script src="//code.jquery.com/jquery-latest.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.js"></script>
+      <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      <script src="/media/js/main.js"></script>
+      <div class="footer">
+        <p>Generated by <a href="http://www.gnu.org/software/emacs/">Emacs</a> 24.x (<a href="http://orgmode.org">Org mode</a> 8.x)</p>
+        <p>
+          Copyright &copy; 2012 - <span id="footerYear"></span> <a href="mailto:paul &lt;dot&gt; elder &lt;at&gt; amanokami &lt;dot&gt; net">Paul Elder</a>
+          &nbsp;&nbsp;-&nbsp;&nbsp;
+          Powered by <a href="https://github.com/kelvinh/org-page" target="_blank">org-page</a>
+          <script type="text/javascript">document.getElementById("footerYear").innerHTML = (new Date()).getFullYear();</script>
+        </p>
+      </div>
+    </div>
+
+  </body>
+</html>

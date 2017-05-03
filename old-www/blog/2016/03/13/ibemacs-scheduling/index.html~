@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <title>IBEmacs: Scheduling - Amanokami Blog</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Paul Elder" />
+    <meta name="description" content="How to do scheduling in Emacs" />
+    <meta name="keywords" content="ib, emacs, ibemacs, organization" />
+    <link rel="stylesheet" href="/media/css/main.css" type="text/css">
+    <link rel="stylesheet" href="/media/css/prettify.css" type="text/css">
+  </head>
+  <body class="container">
+    <div>
+      <header class="masthead">
+        <h1 class="masthead-title"><a href="/">Amanokami Blog</a></h1>
+        <p>Emacs of an IB Student</p>
+        <ul>
+          <li><a href="/blog/">Blog</a></li>
+          <li><a href="/tags/">Tags</a></li>
+          <li><a href="/about/">About</a></li>
+          <li><a href="https://github.com/Rahi374">GitHub</a></li>
+          <li><a href="/rss.xml">RSS</a></li>
+        </ul>
+        <form method="get" id="searchform" action="//www.google.com/search">
+          <input type="text" class="field" name="q" id="s" placeholder="Search">
+          <input type="hidden" name="as_sitesearch" value="amanokami.net">
+        </form>
+      </header>
+    </div>
+
+<div>
+<div class="post">
+<h1>IBEmacs: Scheduling</h1>
+
+<div id="outline-container-sec-1" class="outline-2">
+<h2 id="sec-1">Introduction</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+The next step to preparing your Emacs for an IB (or just school in general) life is scheduling. You need a method to keep track of your events and tasks. Now your friends probably use myHomework or some app of that sort, but of course Emacs is the best.
+</p>
+
+<p>
+There are two steps to scheduling in Emacs: capturing tasks/events and displaying/checking them. For capturing there are the manual and the org-capture methods, and for displaying/checking there are the manual, org-agenda, and emacs-calfw methods.
+</p>
+
+<p>
+I have used all these methods before (that's why I'm not covering the Diary method, because I've never used it), and right now I have settled for org-capture and emacs-calfw. These methods are from my experience and I am presenting their existence to you.
+</p>
+
+<p>
+Before I start, here's a useful little piece of code:
+</p>
+<div class="org-src-container">
+
+<pre class="src src-emacs-lisp">(setq org-todo-keywords
+  '((sequence "TODO(t)" "|" "DONE(d)" "ABORTED(a)"))
+)
+</pre>
+</div>
+<p>
+So that you don't indefinitely have TODO or have an unjust DONE on a task. :)
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-2" class="outline-2">
+<h2 id="sec-2">Manual method (capturing + displaying)</h2>
+<div class="outline-text-2" id="text-2">
+<p>
+The manual method is the easiest so we'll start with that, plus this method is the basis for the other methods as well.
+</p>
+
+<p>
+Naturally, we'll be using org-mode for <b>everything</b>, because that's how Emacs people roll. The most basic method (and the method that I started off with) is just a simple org file. Make a file and put it wherever you want (I put mine in my school work directory, namely <code>~/school/11-12/schedule-org</code>), and just have two main headings with "Old dates" and "Current dates". If you remember from my previous post on home directory organization I have two files holding my biweekly school schedule, so I have a function that inserts that into my buffer and changes the weekday names into date numbers. Then, I just use org-mode's task checklist functionality to add and keep track of events. Here is an example:
+</p>
+
+<p>
+#+BEGIN_SRC ascii
+</p>
+</div>
+</div>
+<div id="outline-container-sec-3" class="outline-2">
+<h2 id="sec-3">Current dates</h2>
+<div class="outline-text-2" id="text-3">
+</div><div id="outline-container-sec-3-1" class="outline-3">
+<h3 id="sec-3-1">Sep 17 (wed)</h3>
+<div class="outline-text-3" id="text-3-1">
+</div><div id="outline-container-sec-3-1-1" class="outline-4">
+<h4 id="sec-3-1-1">Phys <code>[2/2]</code></h4>
+<div class="outline-text-4" id="text-3-1-1">
+</div><ul class="org-ul"><li><a id="sec-3-1-1-1" name="sec-3-1-1-1"></a><span class="done DONE">DONE</span> Pendulum lab<br ><div class="outline-text-5" id="text-3-1-1-1">
+</div>
+</li>
+<li><a id="sec-3-1-1-2" name="sec-3-1-1-2"></a><span class="done DONE">DONE</span> Make data matricies<br ><div class="outline-text-5" id="text-3-1-1-2">
+</div>
+</li></ul>
+</div>
+<div id="outline-container-sec-3-1-2" class="outline-4">
+<h4 id="sec-3-1-2">Econ</h4>
+</div>
+<div id="outline-container-sec-3-1-3" class="outline-4">
+<h4 id="sec-3-1-3">ToK <code>[1/1]</code></h4>
+<div class="outline-text-4" id="text-3-1-3">
+</div><ul class="org-ul"><li><a id="sec-3-1-3-1" name="sec-3-1-3-1"></a><span class="done DONE">DONE</span> Watch "Being There" by Peter Seller<br ><div class="outline-text-5" id="text-3-1-3-1">
+</div>
+</li></ul>
+</div>
+<div id="outline-container-sec-3-1-4" class="outline-4">
+<h4 id="sec-3-1-4">Eng <code>[1/1]</code></h4>
+<div class="outline-text-4" id="text-3-1-4">
+</div><ul class="org-ul"><li><a id="sec-3-1-4-1" name="sec-3-1-4-1"></a><span class="done DONE">DONE</span> Find three texts enhanced by images<br ><div class="outline-text-5" id="text-3-1-4-1">
+</div>
+</li></ul>
+</div>
+<div id="outline-container-sec-3-1-5" class="outline-4">
+<h4 id="sec-3-1-5">Spn <code>[2/2]</code></h4>
+<div class="outline-text-4" id="text-3-1-5">
+</div><ul class="org-ul"><li><a id="sec-3-1-5-1" name="sec-3-1-5-1"></a><span class="done DONE">DONE</span> Download classroom doc<br ><div class="outline-text-5" id="text-3-1-5-1">
+</div>
+</li>
+<li><a id="sec-3-1-5-2" name="sec-3-1-5-2"></a><span class="done DONE">DONE</span> Worksheet<br ><div class="outline-text-5" id="text-3-1-5-2">
+</div>
+</li></ul>
+</div>
+<div id="outline-container-sec-3-1-6" class="outline-4">
+<h4 id="sec-3-1-6">Math</h4>
+<div class="outline-text-4" id="text-3-1-6">
+<p>
+#+END_SRC
+</p>
+
+<p>
+Normally there would be all the days of the week with all the classes, so if I keep this buffer open all the time it doubles as a day schedule so I know what class I have next. Also I would have to keep all the subheadings that have tasks in them tabbed open all the time so that I can actually see them. The main disadvantage of this is that keeping all those dates with long-term tasks open takes up lots of vertical screen space, and that you have to keep track of your tasks manually and it's hard to see how much time you have left for each one.
+</p>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-4" class="outline-2">
+<h2 id="sec-4">org-capture</h2>
+<div class="outline-text-2" id="text-4">
+<p>
+This is the easiest way (that I am aware of) of capturing tasks. First you set your org-capture-templates:
+</p>
+<div class="org-src-container">
+
+<pre class="src src-emacs-lisp">(setq org-capture-templates
+  '(("t" "Task" entry (file+headline "/home/paul374/school/11-12/schedule.org" "Tasks")
+      "* TODO %?\n %i\n")
+     ("e" "Event" entry (file+headline "/home/paul374/school/11-12/schedule.org" "Events")
+       "* %t %? %i\n")))
+</pre>
+</div>
+
+<p>
+And bind org-capture to a key (the second line is not org-capture; I'll explain it):
+</p>
+<div class="org-src-container">
+
+<pre class="src src-ascii">(global-set-key (kbd "C-c c") 'org-capture)
+(global-set-key (kbd "C-c \"") 'org-ctrl-c-ctrl-c)
+</pre>
+</div>
+
+<p>
+Thus, all I have to to is C-c c, then choose either t for a task (ie. homework or assignments) or e for an event (eg. tests, festivals, etc), and populate it with similar content to an entry in the manual method, and then C-c C-c to save!
+</p>
+
+<p>
+The C-c " definition that I have there is to allow me to easily add tags to my captured content, since C-c C-c is usually tag but during capture that key finishes the capturing.
+</p>
+
+<p>
+The only disadvantage that I can see with this method is that it clutters up your schedule file. <b>All</b> of your events are under the Event heading and <b>all</b> your tasks are under the Task heading, so when you are viewing or editing the file it'll just be a long, disorganized (technically chronological order of assignment) list of events and tasks. On the other hand, since we're going to use better methods of viewing your TODOs anyway, this isn't an issue. Yay!
+</p>
+</div>
+</div>
+
+
+<div id="outline-container-sec-5" class="outline-2">
+<h2 id="sec-5">Displaying TODOs</h2>
+<div class="outline-text-2" id="text-5">
+</div><div id="outline-container-sec-5-1" class="outline-3">
+<h3 id="sec-5-1">org-agenda</h3>
+<div class="outline-text-3" id="text-5-1">
+<p>
+Org Agenda is a nice way of displaying all your tasks that you have for a given week. I think you can change the view to month or day, but the point is that the view is linear. I preferred (note that the original manual method is also linear) a linear "calendar" back in the day. You can do a keybinding and easily view all your tasks (for me it was &lt;f6&gt; then a) that you have to do for this week! Here's a sample:
+</p>
+<div class="org-src-container">
+
+<pre class="src src-ascii">Week-agenda (W10):
+Monday      7 March 2016 W10
+  schedule:    1030 CAS Exit Interview                                     :cas:
+Tuesday     8 March 2016
+  schedule:   Deadline:   DONE Physics question                           :phys:
+  schedule:   Deadline:   DONE Econ draft                                 :econ:
+Wednesday   9 March 2016
+  schedule:   Deadline:   DONE English read                                :eng:
+  schedule:    Chem test                                                  :chem:
+Thursday   10 March 2016
+  schedule:   Deadline:   DONE Econ final                                 :econ:
+Friday     11 March 2016
+  schedule:   Deadline:   DONE Math corrections                           :math:
+Saturday   12 March 2016
+Sunday     13 March 2016
+</pre>
+</div>
+
+<p>
+Before you can use it you have to set the org-agenda files:
+</p>
+<div class="org-src-container">
+
+<pre class="src src-emacs-lisp">(setq org-agenda-files '("/home/paul374/school/11-12/"))
+(setq org-default-notes-file "/home/paul374/school/11-12/schedule.org")
+</pre>
+</div>
+
+<p>
+Then you can do keybindings:
+</p>
+<div class="org-src-container">
+
+<pre class="src src-emacs-lisp">(global-set-key (kbd "&lt;f6&gt;") 'org-agenda)
+</pre>
+</div>
+
+<p>
+This method can work with both the manual and org-capture method of capturing, but since you're using this to view it you might as well use org-capture.
+</p>
+
+<p>
+The main disadvantage of this method is that although it's nice and linear, it's a bit difficult to see how many weeks you have left to do a task, and it's hard to grasp what's going on in the next week.
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-5-2" class="outline-3">
+<h3 id="sec-5-2">emacs-calfw</h3>
+<div class="outline-text-3" id="text-5-2">
+<p>
+So obviously the best method of displaying everything is in a calender... but the built-in calendar is puny and you can't see anything besides the dates, plus it only reads from Diary files but all our entries are in an org-file! So we just need a calendar that can display all our tasks and events in it. Simple!
+</p>
+
+<p>
+I found emacs-calfw while browsing GitHub, and it solved all my problems. It can take input from org (and a bunch of other things too!), and it displays everything nicely in a calendar, which can switch between day, week, two week, and monthly view, and it resizes itself depending on the frame size! You can view details of the entries and change the mark (TODO/DONE), and it's just really really cool.
+</p>
+
+<p>
+To get it, git clone <a href="https://github.com/kiwanami/emacs-calfw">https://github.com/kiwanami/emacs-calfw</a> , add it to your path, and require it:
+</p>
+<div class="org-src-container">
+
+<pre class="src src-emacs-lisp">(add-to-list 'load-path "/home/paul374/.emacs.d/elisp/emacs-calfw")
+(require 'calfw-org)
+</pre>
+</div>
+<p>
+Of course, keybindings are nice:
+</p>
+<div class="org-src-container">
+
+<pre class="src src-emacs-lisp">(global-set-key (kbd "&lt;f8&gt;") 'cfw:open-org-calendar)
+</pre>
+</div>
+<p>
+And voilà!
+</p>
+
+<p>
+I recommend reading the GitHub page for more information, since I was satisfied with the default settings.
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-6" class="outline-2">
+<h2 id="sec-6">Conclusion</h2>
+<div class="outline-text-2" id="text-6">
+<p>
+For scheduling in Emacs, I definitely recommend org-capture for capturing and emacs-calfw for displaying your schedule. It's very similar to a handheld diary, where there is a calendar of entries and later there is a weekly view with details.
+</p>
+
+<p>
+The manual methods may be good for starting out or if you're still learning org, and then it's a very simple jump to org agenda, though it would be advisable to switch to the other methods later.
+</p>
+
+<p>
+On the other hand, it's your Emacs, not mine. This is what I found best and what I recommend.
+</p>
+
+<p>
+Have fun!
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-7" class="outline-2">
+<h2 id="sec-7">Extra</h2>
+<div class="outline-text-2" id="text-7">
+<p>
+I'm hoping to post at least two times a week, not on specific days but just two times a week. Maybe one about IBEmacs and one on a tutorial or cool stuff that I'm learning...? Who knows.
+</p>
+
+<p>
+Also I'm going to be posting my notes online soon. Maybe.
+</p>
+
+<p>
+And Disqus works! Yay! I'm liking this new blog. It makes my site more lively.
+</p>
+</div>
+</div>
+
+</div>
+</div>
+    <div>
+      <div class="post-meta">
+        <span title="post date" class="post-info">2016-03-13</span>
+        <span title="last modification date" class="post-info">2016-05-16</span>
+        <span title="tags" class="post-info"><a href="/tags/ib/">ib</a>, <a href="/tags/emacs/">emacs</a>, <a href="/tags/ibemacs/">ibemacs</a>, <a href="/tags/organization/">organization</a></span>
+        <span title="author" class="post-info">Paul Elder</span>
+      </div>
+      <section>
+        <h1>Comments</h1>
+        <div id="disqus_thread"></div>
+        <script type="text/javascript">
+          //var disqus_developer = 1;
+          var disqus_identifier = "/blog/2016/03/13/ibemacs-scheduling";
+          var disqus_url = "http://amanokami.net/blog/2016/03/13/ibemacs-scheduling";
+          var disqus_shortname = 'amanokami';
+          /* * * DON'T EDIT BELOW THIS LINE * * */
+          (function() {
+          var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+          dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+          (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+          })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+        <a href="//disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+      </section>
+      <script src="//code.jquery.com/jquery-latest.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.js"></script>
+      <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      <script src="/media/js/main.js"></script>
+      <div class="footer">
+        <p>Generated by <a href="http://www.gnu.org/software/emacs/">Emacs</a> 24.x (<a href="http://orgmode.org">Org mode</a> 8.x)</p>
+        <p>
+          Copyright &copy; 2012 - <span id="footerYear"></span> <a href="mailto:paul &lt;dot&gt; elder &lt;at&gt; amanokami &lt;dot&gt; net">Paul Elder</a>
+          &nbsp;&nbsp;-&nbsp;&nbsp;
+          Powered by <a href="https://github.com/kelvinh/org-page" target="_blank">org-page</a>
+          <script type="text/javascript">document.getElementById("footerYear").innerHTML = (new Date()).getFullYear();</script>
+        </p>
+      </div>
+    </div>
+
+  </body>
+</html>

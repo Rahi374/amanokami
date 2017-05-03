@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <title>AP Calc BC in a week - Part 2 - Amanokami Blog</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Paul Elder" />
+    <meta name="description" content="Learning AP Calculus BC in a week - Part 2" />
+    <meta name="keywords" content="ap" />
+    <link rel="stylesheet" href="/media/css/main.css" type="text/css">
+    <link rel="stylesheet" href="/media/css/prettify.css" type="text/css">
+  </head>
+  <body class="container">
+    <div>
+      <header class="masthead">
+        <h1 class="masthead-title"><a href="/">Amanokami Blog</a></h1>
+        <p>Emacs of an IB Student</p>
+        <ul>
+          <li><a href="/blog/">Blog</a></li>
+          <li><a href="/tags/">Tags</a></li>
+          <li><a href="/about/">About</a></li>
+          <li><a href="https://github.com/Rahi374">GitHub</a></li>
+          <li><a href="/rss.xml">RSS</a></li>
+        </ul>
+        <form method="get" id="searchform" action="//www.google.com/search">
+          <input type="text" class="field" name="q" id="s" placeholder="Search">
+          <input type="hidden" name="as_sitesearch" value="amanokami.net">
+        </form>
+      </header>
+    </div>
+
+<div>
+<div class="post">
+<h1>AP Calc BC in a week - Part 2</h1>
+
+<div id="outline-container-sec-1" class="outline-2">
+<h2 id="sec-1">Introduction</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+Today we'll be doing:
+</p>
+<ul class="org-ul">
+<li>4K Motion along a curve: Velocity and Acceleration Vectors
+</li>
+<li>4N Slope of a Polar Curve
+</li>
+<li>5C Integration by Partial Fractions
+</li>
+<li>5D Integration by Parts
+</li>
+</ul>
+
+<p>
+Let's start!
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-2" class="outline-2">
+<h2 id="sec-2">4K Motion along a curve: Velocity and Acceleration Vectors</h2>
+<div class="outline-text-2" id="text-2">
+<p>
+So we've got a pair of parametric equations \(x(t)\) and \(y(t)\), and a point \(P\) moves along the curve. At a given \(t\), \(P\) will be at \((x,y)\), where the x and y coordinates conveniently coincide with their functions at the given \(t\).
+</p>
+</div>
+
+<div id="outline-container-sec-2-1" class="outline-3">
+<h3 id="sec-2-1">Position Vector</h3>
+<div class="outline-text-3" id="text-2-1">
+<p>
+That means that a vector can be drawn from the origin to \((x,y)\), and this will be called the <b>position vector</b>: $$\vec{R} = \langle x,y \rangle$$
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-2-2" class="outline-3">
+<h3 id="sec-2-2">Velocity Vector</h3>
+<div class="outline-text-3" id="text-2-2">
+<p>
+Thus a <b>velocity vector</b> can be derived from \(\vec{R}\) by finding its derivative: $$\vec{v} = \frac{d\vec{R}}{dt} = \langle \frac{dx}{dt}, \frac{dy}{dt} \rangle$$
+</p>
+
+<p>
+The slope is: $$\frac{dy}{dx} = \frac{\frac{dy}{dt}}{\frac{dx}{dt}}$$ Which we defined yesterday as the derivative of a parametric function!!
+</p>
+
+<p>
+The magnitude is simple Pythagoras: $$|v| = \sqrt{(\frac{dx}{dt})^2+(\frac{dy}{dt})^2}$$
+</p>
+
+<p>
+If you draw the velocity vector beginning at \(P\), the slope gives you the direction and the magnitude gives you the speed of the velocity of the moving point \(P\).
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-2-3" class="outline-3">
+<h3 id="sec-2-3">Acceleration Vector</h3>
+<div class="outline-text-3" id="text-2-3">
+<p>
+The <b>acceleration vector</b> can likewise be derived from the velocity vector by differentiating it: $$\vec{a} = \frac{d\vec{v}}{dt} = \frac{d^2\vec{R}}{dt^2} = \langle \frac{d^2x}{dt^2}, \frac{d^2y}{dt^2} \rangle$$
+</p>
+
+<p>
+The magnitude can be found with good 'ol Pythagoras again: $$|a| = \sqrt{(\frac{d^2x}{dt^2})^2+(\frac{d^2y}{dt^2})^2}$$
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-2-4" class="outline-3">
+<h3 id="sec-2-4">Take-home message</h3>
+<div class="outline-text-3" id="text-2-4">
+<ul class="org-ul">
+<li><b>Position vector</b> is just a vector from the origin to \((x,y)\). \(x\) and \(y\) conveniently correspond to the parametric equations.
+</li>
+<li><b>Velocity vector</b> is just the derivative of the position vector. Just differentiate \(x\) and \(y\) in the position vector.
+</li>
+<li><b>Acceleration vector</b> is just the derivative of the velocity vector. Just differentiate \(\frac{dx}{dt}\) and \(\frac{dy}{dt}\) in the velocity vector.
+</li>
+<li>To find the slope, \(\frac{dy}{dx}=\frac{y'(t)}{x'(t)}\)
+</li>
+<li>To find the magnitude, just use good 'ol Pythagoras
+</li>
+</ul>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-3" class="outline-2">
+<h2 id="sec-3">4N Slope of a Polar Curve</h2>
+<div class="outline-text-2" id="text-3">
+<p>
+To find the slope of a polar curve, first you make it parametric, then you can easily differentiate that. There's a super-complicated formula that you might as not even try to remember.
+</p>
+
+<p>
+Say you have a polar function \(r=f(\theta)\), then it can be expressed parametrically as $$x=r\cos\theta=f(\theta)\cos\theta$$ and $$y=r\sin\theta=f(\theta)\sin\theta$$
+</p>
+
+<p>
+Then, you can simply differentiate these two (product rule) to get \(\frac{dx}{d\theta}\) and \(\frac{dy}{d\theta}\):
+$$\frac{dx}{d\theta} = f'(\theta)\cos\theta - f(\theta)\sin\theta$$
+$$\frac{dy}{d\theta} = f'(\theta)\sin\theta + f(\theta)\cos\theta$$
+</p>
+
+<p>
+Then you just divide those parametric equations by doing $$\frac{dy}{dx} = \frac{\frac{dy}{d\theta}}{\frac{dx}{d\theta}}$$ which you can do yourself so I'm not going to show you. (Also the result is that long complicated formula that you might as well not memorize)
+</p>
+
+<p>
+The given example questions are simple stuff like find the slope of a function at a given \(\theta\), simple stuff that we've been doing for the entirety of differential calculus, so there should be no problem.
+</p>
+</div>
+
+<div id="outline-container-sec-3-1" class="outline-3">
+<h3 id="sec-3-1">Take-home message</h3>
+<div class="outline-text-3" id="text-3-1">
+<ul class="org-ul">
+<li>Turn the polar function into parametric equations and differentiate each, and divide \(x'(\theta)\) by \(y'(\theta)\) and you've got your \(\frac{dy}{dx}\) !
+</li>
+</ul>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-4" class="outline-2">
+<h2 id="sec-4">5C Integration by Partial Fractions</h2>
+<div class="outline-text-2" id="text-4">
+<p>
+Ooh integral calculus now.
+</p>
+
+<p>
+So the main concern here is splitting a complicated polynomial fraction like \(\frac{x^2-2x-8}{x^3+2x^2-3x}\) into many less complicated fractions so we can easily integrate it. Also if you have an improper fraction, split it into proper fractions before you do this method, since this method only works with proper fractions.
+</p>
+
+<p>
+First, we have to factor the denominator:
+$$\frac{x^2-2x-8}{x(x-3)(x+1)}$$
+This will be set to be equal to three partial fractions, one for each term, in the form \(\frac{A}{x-a}\): $$\frac{A}{x}, \frac{B}{x-3}, \frac{C}{x+1}$$
+</p>
+
+<p>
+This results in $$\frac{x^2-2x-8}{x(x-3)(x+1)} = \frac{A}{x} + \frac{B}{x-3} + \frac{C}{x+1}$$ which can also be expressed as $$x^2-2x-8 = A(x-3)(x+1) + Bx(x+1) + Cx(x-3)$$
+</p>
+
+<p>
+Then there are two methods to find \(A\), \(B\), and \(C\).
+</p>
+</div>
+
+<div id="outline-container-sec-4-1" class="outline-3">
+<h3 id="sec-4-1">Method 1</h3>
+<div class="outline-text-3" id="text-4-1">
+<p>
+The first method is to expand and then combine the second equation.
+$$x^2-2x-8 = A(x-3)(x+1) + Bx(x+1) + Cx(x-3)$$
+$$x^2-2x-8 = Ax^2 + -2Ax + -3A + Bx^2 + Bx + Cx^2 + -3Cx$$
+$$x^2-2x-8 = (A+B+C)x^2 + (-2A+B-3C)x -3A$$
+</p>
+
+<p>
+Then you can equate the coefficients and then use simultaneous equations to solve for \(A\), \(B\), and \(C\).
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-4-2" class="outline-3">
+<h3 id="sec-4-2">Method 2</h3>
+<div class="outline-text-3" id="text-4-2">
+<p>
+The second method is a lot easier. In the first equation, $$\frac{x^2-2x-8}{x(x-3)(x+1)} = \frac{A}{x} + \frac{B}{x-3} + \frac{C}{x+1}$$, there are some illegal values, namely \(x=0\), \(x=3\), and \(x=-1\). However, these values must still hold for the second equation, and in fact we can plug them in to that equation and it'll remove some terms, making it a lot easier to find \(A\), \(B\), and \(C\).
+</p>
+
+<p>
+Try it! Plug in \(x=0\), \(x=3\), and \(x=-1\) into $$x^2-2x-8 = A(x-3)(x+1) + Bx(x+1) + Cx(x-3)$$ and get your \(A\), \(B\) and \(C\) and compare the results with Method 1! They should be the same.
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-4-3" class="outline-3">
+<h3 id="sec-4-3">After A, B and C</h3>
+<div class="outline-text-3" id="text-4-3">
+<p>
+Now just plug in \(A\), \(B\), and \(C\), and you've got your partial fractions!
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-4-4" class="outline-3">
+<h3 id="sec-4-4">Take-home message</h3>
+<div class="outline-text-3" id="text-4-4">
+<ul class="org-ul">
+<li>We're splitting complicated fractions into smaller ones
+</li>
+<li>Make sure it's a proper fraction
+</li>
+<li>Factor out the denominator and equate the whole fraction to a number of fractions for each term in the denominator
+</li>
+<li>Multiply everything by the denominator
+</li>
+<li>Find the numerators by expansion and combination
+</li>
+<li>Or by using the values of \(x\) where the fractions would be undefined
+</li>
+</ul>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-5" class="outline-2">
+<h2 id="sec-5">5D Integration by Parts</h2>
+<div class="outline-text-2" id="text-5">
+</div><div id="outline-container-sec-5-1" class="outline-3">
+<h3 id="sec-5-1">Derivation</h3>
+<div class="outline-text-3" id="text-5-1">
+<p>
+Okay... so this is basically the product rule for integrals. First we'll derive the Parts formula (so that you don't have to memorize it):
+</p>
+
+<p>
+We start off with the Product Rule:
+$$\frac{d}{dx}(uv) = u\frac{dv}{dx} + v\frac{du}{dx}$$
+Which simplifies to:
+$$d(uv) = udv + vdu$$
+Rearrange:
+$$udv = d(uv) - vdu$$
+And integrate:
+$$\int u dv = uv - \int v du$$
+This is the Parts formula.
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-5-2" class="outline-3">
+<h3 id="sec-5-2">Usage</h3>
+<div class="outline-text-3" id="text-5-2">
+<p>
+Basically we have to split the product that is being integrated into a \(u\) and a \(dv\). Then we would differentiate the \(u\) to get a \(du\) and integrate the \(dv\) to get a \(v\). That means that \(dv\) better be easy to integrate and \(\int v du\) better be easy to integrate as well.
+</p>
+
+<p>
+Example: \(\int x \sin x dx\)
+$$u = x, du = dx$$
+$$dv = \sin x dx, v = -\cos x$$
+$$\int x \sin x dx = x \times -\cos x - \int -\cos x dx$$
+</p>
+
+<p>
+Sometimes Parts will need to be repeated, for example:
+$$\int x^2 \sin x dx$$
+$$u = x^2, du = 2x dx$$
+$$dv = \sin x dx, v = -\cos x$$
+$$\int x^2 \sin x dx = x^2 \times -\cos x - \int -\cos x \times 2x dx$$
+And we just do Parts again on the second integral on the right hand side.
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-5-3" class="outline-3">
+<h3 id="sec-5-3">Tic-Tac-Toe Method</h3>
+<div class="outline-text-3" id="text-5-3">
+<p>
+This method looks useful, but I can't get it straight (I feel like I'm going to lose track of the lines) (Hahaha Lines? Straight? Get it?) so I'm just going to skip this and if I ever get something like \(u=x^4\) then I'll just do Parts over and over again. Hopefully I never have to deal with \(u=x^{10}\).
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-5-4" class="outline-3">
+<h3 id="sec-5-4">LIATE</h3>
+<div class="outline-text-3" id="text-5-4">
+<p>
+This isn't from the book, but I found it on Wikipedia and it looks absolutely fabulous!
+</p>
+
+<p>
+Basically this says that the highest thing on the list should be \(u\), and here is the list:
+</p>
+<ol class="org-ol">
+<li><b>L</b> - Logarithmic
+</li>
+<li><b>I</b> - Inverse Trig
+</li>
+<li><b>A</b> - Algebraic
+</li>
+<li><b>T</b> - Trig
+</li>
+<li><b>E</b> - Exponential
+</li>
+</ol>
+
+<p>
+Conversely the lowest thing on the list should be \(dv\).
+</p>
+
+<p>
+If <b>LIATE</b> is hard to remember, you can also remember it as <b>DETAIL</b>, where <b>D</b> means that this is better for <b>dv</b>.
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-5-5" class="outline-3">
+<h3 id="sec-5-5">Take-home message</h3>
+<div class="outline-text-3" id="text-5-5">
+<ul class="org-ul">
+<li>Derive the Parts formula \(\int u dv = uv - \int v du\) from the Product rule \(\frac{d}{dx}uv = u\frac{dv}{dx} = v\frac{du}{dx}\)
+</li>
+<li>Split your integral into \(u\) and \(dv\) according to <b>LIATE</b> (or <b>DETAIL</b>)
+</li>
+</ul>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-6" class="outline-2">
+<h2 id="sec-6">Conclusion</h2>
+<div class="outline-text-2" id="text-6">
+<p>
+Still good. Maybe doing some practice problems is a good idea.
+</p>
+
+<p>
+I think at the end of the week I'll compile all the take-home messages into one post.
+</p>
+
+<p>
+Next time we'll be doing:
+</p>
+<ul class="org-ul">
+<li>6C Integrals involving Parametrically Defined Functions
+</li>
+<li>7C Arc Length
+</li>
+<li>7D Improper Integrals
+</li>
+<li>8B Motion along a Plane Curve
+</li>
+</ul>
+
+<p>
+Stay tuned!
+</p>
+</div>
+</div>
+
+</div>
+</div>
+    <div>
+      <div class="post-meta">
+        <span title="post date" class="post-info">2016-03-21</span>
+        <span title="last modification date" class="post-info">2016-05-16</span>
+        <span title="tags" class="post-info"><a href="/tags/ap/">ap</a></span>
+        <span title="author" class="post-info">Paul Elder</span>
+      </div>
+      <section>
+        <h1>Comments</h1>
+        <div id="disqus_thread"></div>
+        <script type="text/javascript">
+          //var disqus_developer = 1;
+          var disqus_identifier = "/blog/2016/03/21/ap-calc-in-a-week-part-2";
+          var disqus_url = "http://amanokami.net/blog/2016/03/21/ap-calc-in-a-week-part-2";
+          var disqus_shortname = 'amanokami';
+          /* * * DON'T EDIT BELOW THIS LINE * * */
+          (function() {
+          var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+          dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+          (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+          })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+        <a href="//disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+      </section>
+      <script src="//code.jquery.com/jquery-latest.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.js"></script>
+      <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      <script src="/media/js/main.js"></script>
+      <div class="footer">
+        <p>Generated by <a href="http://www.gnu.org/software/emacs/">Emacs</a> 24.x (<a href="http://orgmode.org">Org mode</a> 8.x)</p>
+        <p>
+          Copyright &copy; 2012 - <span id="footerYear"></span> <a href="mailto:paul &lt;dot&gt; elder &lt;at&gt; amanokami &lt;dot&gt; net">Paul Elder</a>
+          &nbsp;&nbsp;-&nbsp;&nbsp;
+          Powered by <a href="https://github.com/kelvinh/org-page" target="_blank">org-page</a>
+          <script type="text/javascript">document.getElementById("footerYear").innerHTML = (new Date()).getFullYear();</script>
+        </p>
+      </div>
+    </div>
+
+  </body>
+</html>

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <title>Introduction - Emacs of an IB Student - Amanokami Blog</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Paul Elder" />
+    <meta name="description" content="First post in my blog, introducing Emacs for an IB student" />
+    <meta name="keywords" content="emacs, ib" />
+    <link rel="stylesheet" href="/media/css/main.css" type="text/css">
+    <link rel="stylesheet" href="/media/css/prettify.css" type="text/css">
+  </head>
+  <body class="container">
+    <div>
+      <header class="masthead">
+        <h1 class="masthead-title"><a href="/">Amanokami Blog</a></h1>
+        <p>Emacs of an IB Student</p>
+        <ul>
+          <li><a href="/blog/">Blog</a></li>
+          <li><a href="/tags/">Tags</a></li>
+          <li><a href="/about/">About</a></li>
+          <li><a href="https://github.com/Rahi374">GitHub</a></li>
+          <li><a href="/rss.xml">RSS</a></li>
+        </ul>
+        <form method="get" id="searchform" action="//www.google.com/search">
+          <input type="text" class="field" name="q" id="s" placeholder="Search">
+          <input type="hidden" name="as_sitesearch" value="amanokami.net">
+        </form>
+      </header>
+    </div>
+
+<div>
+<div class="post">
+<h1>Introduction - Emacs of an IB Student</h1>
+
+<div id="outline-container-sec-1" class="outline-2">
+<h2 id="sec-1">Introduction</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+So I'm an IB student (well, nearing the end of it) and I like Emacs. Between my 10th and 11th grade I actually tried to prepare my computer for IB, such as the file organization, note-taking organization, Emacs organization, etc. I failed and ended up having to set it up on the way. Fun, but time-consuming, and time is a luxury as an IB student.
+</p>
+
+<p>
+Last week my computer broke, as in it refued to open any graphical programs besides Emacs, so until I fixed it (yesterday) I got to learn how to do <b>everything</b> in Emacs. This ranged from emails to Facebook messaging to scheduling (I did that in Emacs anyway) to LaTeX for all assignments to web browsing. 
+</p>
+
+<p>
+Then I remembered that every time I had to set up a new system, be it Debian or Arch or Emacs or a Ruby on Rails server or an Apache server, I keep forgetting how to do it. Even worse, internet resources are <b>useless</b> sometimes. So, I set up this blog to document problems that I solved that took hours of web searching so that I don't have to do all the web searching again! (Hopefully you won't either!)
+</p>
+
+<p>
+Also, when I searched the internet on how to organize my work directory etc etc, everything that I found was written for working people, not students, 'cause I mean what teenager uses Emacs? I had to learn a good structure for me over a year or two, and I thought that might be good to share as well, for other Emacs-using teens like me that need an idea on how to structure their work director. Same thing happened to me with scheduling and note-taking in Emacs. I had to learn on my own and here I am going to share it. 
+</p>
+
+<p>
+It's late now so I better wrap it up around here and leave the rest for next time.
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-2" class="outline-2">
+<h2 id="sec-2">Things that I plan to write about</h2>
+<div class="outline-text-2" id="text-2">
+<ul class="org-ul">
+<li>Directory Organization (General)
+</li>
+<li>Scheduling (Emacs)
+</li>
+<li>Note-taking (Emacs)
+</li>
+<li>Document writing (Emacs)
+</li>
+<li>Circular Economy (General)
+</li>
+<li>Email, maybe (Emacs)
+</li>
+<li>Blogging, maybe (Emacs)
+</li>
+<li>Apache reverse proxy (Apache) 
+</li>
+<li>Apache Rails serving (Apache)
+</li>
+</ul>
+</div>
+</div>
+
+</div>
+</div>
+    <div>
+      <div class="post-meta">
+        <span title="post date" class="post-info">2016-03-01</span>
+        <span title="last modification date" class="post-info">2016-05-16</span>
+        <span title="tags" class="post-info"><a href="/tags/emacs/">emacs</a>, <a href="/tags/ib/">ib</a></span>
+        <span title="author" class="post-info">Paul Elder</span>
+      </div>
+      <section>
+        <h1>Comments</h1>
+        <div id="disqus_thread"></div>
+        <script type="text/javascript">
+          //var disqus_developer = 1;
+          var disqus_identifier = "/blog/2016/03/01/introduction";
+          var disqus_url = "http://amanokami.net/blog/2016/03/01/introduction";
+          var disqus_shortname = 'amanokami';
+          /* * * DON'T EDIT BELOW THIS LINE * * */
+          (function() {
+          var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+          dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+          (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+          })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+        <a href="//disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+      </section>
+      <script src="//code.jquery.com/jquery-latest.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.js"></script>
+      <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      <script src="/media/js/main.js"></script>
+      <div class="footer">
+        <p>Generated by <a href="http://www.gnu.org/software/emacs/">Emacs</a> 24.x (<a href="http://orgmode.org">Org mode</a> 8.x)</p>
+        <p>
+          Copyright &copy; 2012 - <span id="footerYear"></span> <a href="mailto:paul &lt;dot&gt; elder &lt;at&gt; amanokami &lt;dot&gt; net">Paul Elder</a>
+          &nbsp;&nbsp;-&nbsp;&nbsp;
+          Powered by <a href="https://github.com/kelvinh/org-page" target="_blank">org-page</a>
+          <script type="text/javascript">document.getElementById("footerYear").innerHTML = (new Date()).getFullYear();</script>
+        </p>
+      </div>
+    </div>
+
+  </body>
+</html>

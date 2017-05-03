@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <title>AP Calc BC in a week - Intro - Amanokami Blog</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Paul Elder" />
+    <meta name="description" content="Learning AP Calculus BC in a week - Intro" />
+    <meta name="keywords" content="ap" />
+    <link rel="stylesheet" href="/media/css/main.css" type="text/css">
+    <link rel="stylesheet" href="/media/css/prettify.css" type="text/css">
+  </head>
+  <body class="container">
+    <div>
+      <header class="masthead">
+        <h1 class="masthead-title"><a href="/">Amanokami Blog</a></h1>
+        <p>Emacs of an IB Student</p>
+        <ul>
+          <li><a href="/blog/">Blog</a></li>
+          <li><a href="/tags/">Tags</a></li>
+          <li><a href="/about/">About</a></li>
+          <li><a href="https://github.com/Rahi374">GitHub</a></li>
+          <li><a href="/rss.xml">RSS</a></li>
+        </ul>
+        <form method="get" id="searchform" action="//www.google.com/search">
+          <input type="text" class="field" name="q" id="s" placeholder="Search">
+          <input type="hidden" name="as_sitesearch" value="amanokami.net">
+        </form>
+      </header>
+    </div>
+
+<div>
+<div class="post">
+<h1>AP Calc BC in a week - Intro</h1>
+
+<div id="outline-container-sec-1" class="outline-2">
+<h2 id="sec-1">Introduction</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+So at school I take AP Calculus AB (since I already finished IB Math SL last year), but I'm taking the BC exam so I have to cover the BC material on my own, and it's spring break now so perfect studying time. I thought it would be cool to document my progress. Or at least my notes. Not too sure if that's a good idea or not, but ah well.
+</p>
+
+<p>
+Also, I'm using Barron's book (AP Calculus), 13th edition, and I'm only going to do the BC sections. In 4 or 5 days!
+</p>
+
+<p>
+Basically it'll be reading and then note-taking. Also I have a Casio fx-CG 20 calculator, so I get a bunch of easy features that the TI-84 doesn't get, so if I introduce some function and you don't have it on your TI, too bad!
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-2" class="outline-2">
+<h2 id="sec-2">Plan</h2>
+<div class="outline-text-2" id="text-2">
+<ol class="org-ol">
+<li>Day 1
+<ul class="org-ul">
+<li>1F Parametrically Defined Functions
+</li>
+<li>1G Polar Functions
+</li>
+<li>3F Derivatives of Parametrically Defined Funcitons
+</li>
+<li>3J Indeterminate Forms and L'Hopital's Rule
+</li>
+</ul>
+</li>
+<li>Day 2
+<ul class="org-ul">
+<li>4K Motion along a curve: Velocity and Acceleration Vectors
+</li>
+<li>4N Slope of a Polar Curve
+</li>
+<li>5C Integration by Partial Fractions
+</li>
+<li>5D Integration by Parts
+</li>
+</ul>
+</li>
+<li>Day 3
+<ul class="org-ul">
+<li>6C Integrals involving Parametrically Defined Functions
+</li>
+<li>7C Arc Length
+</li>
+<li>7D Improper Integrals
+</li>
+<li>8B Motion along a Plane Curve
+</li>
+</ul>
+</li>
+<li>Day 4
+<ul class="org-ul">
+<li>9C Euler's Method
+</li>
+<li>9E3 Logistic Growth
+</li>
+</ul>
+</li>
+<li>Day 5
+<ul class="org-ul">
+<li>10 Sequences and Series
+
+<p>
+I'll shorten it to 4 days if I can, otherwise hopefully I can stick to this plan.
+</p>
+</li>
+</ul>
+</li>
+</ol>
+</div>
+</div>
+
+</div>
+</div>
+    <div>
+      <div class="post-meta">
+        <span title="post date" class="post-info">2016-03-20</span>
+        <span title="last modification date" class="post-info">2016-05-16</span>
+        <span title="tags" class="post-info"><a href="/tags/ap/">ap</a></span>
+        <span title="author" class="post-info">Paul Elder</span>
+      </div>
+      <section>
+        <h1>Comments</h1>
+        <div id="disqus_thread"></div>
+        <script type="text/javascript">
+          //var disqus_developer = 1;
+          var disqus_identifier = "/blog/2016/03/20/ap-calc-bc-in-a-week-intro";
+          var disqus_url = "http://amanokami.net/blog/2016/03/20/ap-calc-bc-in-a-week-intro";
+          var disqus_shortname = 'amanokami';
+          /* * * DON'T EDIT BELOW THIS LINE * * */
+          (function() {
+          var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+          dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+          (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+          })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+        <a href="//disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+      </section>
+      <script src="//code.jquery.com/jquery-latest.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.js"></script>
+      <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      <script src="/media/js/main.js"></script>
+      <div class="footer">
+        <p>Generated by <a href="http://www.gnu.org/software/emacs/">Emacs</a> 24.x (<a href="http://orgmode.org">Org mode</a> 8.x)</p>
+        <p>
+          Copyright &copy; 2012 - <span id="footerYear"></span> <a href="mailto:paul &lt;dot&gt; elder &lt;at&gt; amanokami &lt;dot&gt; net">Paul Elder</a>
+          &nbsp;&nbsp;-&nbsp;&nbsp;
+          Powered by <a href="https://github.com/kelvinh/org-page" target="_blank">org-page</a>
+          <script type="text/javascript">document.getElementById("footerYear").innerHTML = (new Date()).getFullYear();</script>
+        </p>
+      </div>
+    </div>
+
+  </body>
+</html>
