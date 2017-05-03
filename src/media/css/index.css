@@ -65,6 +65,7 @@ nav li a {
 }
 
 nav li a:visited { color: white; }
+nav li a:link { color: white; }
 
 
 .code-container {
