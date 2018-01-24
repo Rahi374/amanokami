@@ -7,6 +7,9 @@ require "ostruct"
 default_lang = "en-us"
 default_author = "Paul Elder"
 
+ssh_dest = "amanokami"
+ssh_dest_path = "/srv/www"
+
 rss_title = "Amanokami Blog"
 rss_link  = "https://amanokami.net"
 rss_alink = "https://amanokami.net/rss.xml"
@@ -20,7 +23,7 @@ task default: [:build_posts,
                :build_rss,
                #:build_tags,
                :copy_media,
-               #:publish
+               :publish
               ]
 
 task :build_posts do
@@ -310,4 +313,6 @@ end
 
 
 task :publish do
+  system("ssh #{ssh_dest} rm -rf #{ssh_dest_path}/*")
+  system("scp -r www/* #{ssh_dest}:#{ssh_dest_path}")
 end
