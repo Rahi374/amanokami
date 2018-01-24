@@ -151,7 +151,7 @@ task :build_projects do
     output = renderer.result
 
     puts "  => Writing ERB output to www/projects/#{@name}/index.html"
-    a.map{|i| unless Dir.exist? "www/projects/#{name}" then Dir.mkdir "www/projects/#{name}" end }
+    a.map{|i| unless Dir.exist? "www/projects/#{@name}" then Dir.mkdir "www/projects/#{@name}" end }
     
     f = File.new("www/projects/#{@name}/index.html", "w")
     f.write output
