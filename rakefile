@@ -26,6 +26,18 @@ task default: [:build_posts,
                :publish
               ]
 
+task no_pub: [:build_posts,
+              :build_projects,
+              :build_indexes,
+              :build_rss,
+              #:build_tags,
+              :copy_media,
+             ]
+
+task :run_server do
+  system("ruby -run -e httpd www")
+end
+
 task :build_posts do
   files = Rake::FileList["src/blog/*.html"].reject{|i| i.match(/src\/blog\/index.html/) }
   puts "Getting src blog posts html files..."
