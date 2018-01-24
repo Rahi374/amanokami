@@ -8,13 +8,22 @@
     <title>Amanokami Blog</title>
     <link>https://amanokami.net</link>
     <atom:link href="https://amanokami.net/rss.xml" rel="self" type="application/rss+xml" />
-    <description>Emacs of a Student</description>
+    <description>No description</description>
     <language>en-us</language>
-    <lastBuildDate>Wed, 03 May 2017 15:13:54 +0900</lastBuildDate>
+    <lastBuildDate>Wed, 24 Jan 2018 04:05:53 -0500</lastBuildDate>
     <docs>http://www.rssboard.org/rss-specification</docs>
     <generator>Custom static site generator (https://github.com/Rahi374/amanokami)</generator>
     <copyright></copyright>
 
+    
+    <item>
+      <title>The Case Against Distro Switching</title>
+      <link>https://amanokami.net/blog/2018/01/20/the-case-against-distro-switching/index.html</link>
+      <description></description>
+      <pubDate>2018-01-20</pubDate>
+      <guid>https://amanokami.net/blog/2018/01/20/the-case-against-distro-switching/index.html</guid>
+      <dc:creator>Paul Elder</dc:creator>
+    </item>
     
     <item>
       <title>New plan</title>
@@ -112,6 +121,15 @@
       <description></description>
       <pubDate>2016-03-23</pubDate>
       <guid>https://amanokami.net/blog/2016/03/23/ap-calc-bc-in-a-week-part-3/index.html</guid>
+      <dc:creator>Paul Elder</dc:creator>
+    </item>
+    
+    <item>
+      <title>AP Calc BC in a week - Intro</title>
+      <link>https://amanokami.net/blog/2016/03/21/ap-calc-in-a-week-part-2/index.html</link>
+      <description></description>
+      <pubDate>2016-03-21</pubDate>
+      <guid>https://amanokami.net/blog/2016/03/21/ap-calc-in-a-week-part-2/index.html</guid>
       <dc:creator>Paul Elder</dc:creator>
     </item>
     
