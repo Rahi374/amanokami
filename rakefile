@@ -9,6 +9,7 @@ default_author = "Paul Elder"
 
 ssh_dest = "amanokami"
 ssh_dest_path = "/srv/www"
+pub_protocol = "rsync"
 
 rss_title = "Amanokami Blog"
 rss_link  = "https://amanokami.net"
@@ -325,6 +326,10 @@ end
 
 
 task :publish do
-  system("ssh #{ssh_dest} rm -rf #{ssh_dest_path}/*")
-  system("scp -r www/* #{ssh_dest}:#{ssh_dest_path}")
+  if pub_protocol == "scp"
+    system("ssh #{ssh_dest} rm -rf #{ssh_dest_path}/*")
+    system("scp -r www/* #{ssh_dest}:#{ssh_dest_path}")
+  elsif pub_protocol == "rsync"
+    system("rsync -arvz --progress --delete #{ssh_dest}:#{ssh_dest_path} www")
+  end
 end
