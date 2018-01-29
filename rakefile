@@ -40,6 +40,17 @@ task :run_server do
 end
 
 task :build_posts do
+
+  # First convert the org files to html files and put them back in src/
+  org_files = Rake::FileList["src/blog/*.org"].reject{|i| i.match(/src\/blog\/index.org/) }
+  puts "Getting src blog posts org files..."
+  puts org_files
+
+  org_files.each do |file|
+    puts "=== Converting #{file} to html ==="
+    system "pandoc #{file} -t html > #{file.gsub('org', 'html')}"
+  end
+
   files = Rake::FileList["src/blog/*.html"].reject{|i| i.match(/src\/blog\/index.html/) }
   puts "Getting src blog posts html files..."
   puts files
