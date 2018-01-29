@@ -51,15 +51,22 @@ task :build_posts do
     system "pandoc #{file} -t html > #{file.gsub('org', 'html')}"
   end
 
+  # Get all the html files that are not index.html
   files = Rake::FileList["src/blog/*.html"].reject{|i| i.match(/src\/blog\/index.html/) }
   puts "Getting src blog posts html files..."
   puts files
 
+  # Load the blog post template
   puts "Loading template..."
   template = ""
   File.open("template.html.erb", "r") do |f| f.each_line do |line| template << line end end
   renderer = ERB.new(template)
 
+  # For each file
+  # - Parse header and populate blog post metadata with it
+  # - Get html content
+  # - Apply metadata and html content to erb template
+  # - Write to output file
   files.each do |file|
     puts "=== Working on #{file} ==="
     puts "    => Parsing header..."
@@ -177,12 +184,19 @@ end
 
 
 task :build_indexes do
+  # These are fake associative arrays of info on the index pages
   filelist_names  = ["about", "main index", "blog index", "projects index"]
   filelist_titles = ["About", "", "Blog Index", "Projects Index"]
   filelist_src    = ["src/about/index.html", "src/index.html", "src/blog/index.html", "src/projects/index.html"]
   filelist_dest   = ["www/about/index.html", "www/index.html", "www/blog/index.html", "www/projects/index.html"]
   filelist_dir    = ["", "", "blog", "projects"]
 
+  # For each index page that we have to build
+  # - Get and truncate template
+  # - Load index file content
+  # - If projects or blog post index, then generate list of pages
+  # - Apply erb template
+  # - Write to file
   filelist_names.each_index do |i|
     puts "=== Building #{filelist_names[i]} ==="
     file = filelist_src[i]
