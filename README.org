@@ -1,0 +1,50 @@
+* amanokami
+
+Amanokami Website (and build system)
+
+[[http://amanokami.net]]
+
+(https broke and I haven't gotten around to fixing it)
+
+* What I write about
+
+Whatever comes to mind.
+
+When I was in high school it used to be Emacs and IB and
+some AP calculus stuff but I didn't actually write much.
+After all, I can't just copy&paste or paraphrase entire
+blog posts from other people.
+
+I switched to Vim now but I'm not an expert at it like I
+was at Emacs at the time so I can't write about that. On
+the other hand, I feel like I've got Debian down enough
+that I could create some stuff around it. Perhaps some
+miscellaneous setup tutorials as well, or dotfile commentaries.
+We'll see.
+
+* The build system
+
+I went through many iterations. When I was in middle school
+I manually copy and pasted the template portions of the pages.
+When I got tired of that I used tabbed single-page.
+
+I used org-pages for a while and it was quite nice, but then
+I started getting merge conflicts everywhere (because for
+some reason when you do builds on that it puts the build output
+in a different branch) and assets were a pain to do.
+
+So I made my own nice build system. It's crude, but simple, so
+I like it. It's all contained within that Rakefile which, honestly,
+I should refactor the insides of.
+
+It gets the =src/blog/*.html= (and now =*.org= as well) and
+tacks them onto the blog template ERB and puts them in =www/=.
+(It does something similar for =src/about/= and =src/projects=).
+Then it gets the filelist of those outputted above to generate
+the index pages of the respective categories. The filelist is also
+used to generate the RSS (which I coded by hand without libraries).
+
+I have considered Jekyll, but by the time I had thought about it I
+had already made this build system and had been using it for a while
+so I didn't want to spend time to learn and switch to another static
+site generator.
