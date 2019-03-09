@@ -1,0 +1,58 @@
+* disable predictable network device names
+  - ln -s /dev/null /etc/systemd/network/99-default.link
+  - freedesktop.org/wiki/Software/systemd/PredictableNetworkInterfaceNames
+* debian java alternatives
+  - https://unix.stackexchange.com/questions/432798/using-apt-how-to-install-jdk-7-when-jdk-8-is-already-installed
+  - https://www.mkyong.com/linux/debian-change-default-java-version/
+* debian install iwlwifi
+  - get iwlwifi from linux-firmware (gigt.kernel.org)
+  - copy to /lib/firmware (need to mkdir /lib/firmware)
+  - symlink the newer versions
+* adblock
+  - surf.suckless.org
+* fcitx
+* gpg yubikey
+  - https://support.yubico.com/support/solutions/articles/15000006420-using-your-yubikey-with-openpgp
+  - https://malcolmsparks.com/posts/yubikey-gpg.html
+* luks install
+  - guided :)
+* hostname tied to physical machine?
+  - tied to filesystem, because it is important for ssh into
+* vundle
+* cross compiler
+  - gcc-arm-linux-gnueabi(hf)
+  - bison (in general)
+  - build-essential (in general)
+  - libssl-dev (in general)
+* add architecture
+  - https://wiki.debian.org/Multiarch/HOWTO
+* apt vs apt-get
+* rsync resume scp
+  - http://ask.xmodulo.com/resume-large-scp-file-transfer-linux.html
+* add user to group
+  - https://www.howtogeek.com/50787/add-a-user-to-a-group-or-second-group-on-linux/
+* mini docker
+  - https://wiki.debian.org/PackagingWithDocker?highlight=%28%28Docker%29%29
+* pandaboard boot nfs
+  - /etc/dhcp/dhcpd.conf
+  - /etc/exports
+  - /etc/network/interfaces
+  - isc-dhcp-server (/etc/defaults/isc-dhcp-server)
+  - (kill other dhcp)
+* packages
+  - sudo apt install -y rxvt-unicode vim zsh build-essential ruby feh zathura
+    git cscope exuberant-ctags network-manager-gnome fcitx fcitx-mozc
+    fcitx-googlepinyin fcitx-frontend-gtk2 mpc mpd ncmpcpp screen gcal ncdu
+    redshift surf sshfs scrot timewarrior korganizer java-common default-jre
+    default-jdk racket bundler firefox-esr mc tilda minicom isc-dhcp-server
+    isc-dhcp-client nfs-kernel-server libreoffice imagemagick qv4l2 mpv
+    ffmpeg udisks2 acpi arandr x11-xserver-utils autossh ardour audacity
+    bsdgames mutt offlineimap ccache pdftk texlive-extra-utils
+    texlive-lang-cjk texlive-base texlive curl elinks emacs25 fakeroot gdb
+    gimp kolourpaint4 gksu wireshark weechat htop hunspell-en-us ispell
+    jackd2 kernelshark xbacklight compton meson mruby musescore nasm neofetch
+    pandoc patch patchutils pavucontrol pidgin qemu qemu-user-static qemu-kvm
+    qemu-system qemu-utils qjackctl rake ristretto rlwrap rsync unison sakura
+    transmission-gtk tree ufw urlscan urlview vim-gtk3 weechat-plugins whois
+    xinput xsel youtube-dl zenity mps-youtube zip
+* ccache (?)
